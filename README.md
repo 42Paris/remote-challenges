@@ -26,8 +26,8 @@ Vous devez rendre votre solution dans le bon dossier et le nom de votre fichier 
  
 ##### Règles:
  - Vous ne pouvez pas envoyer une solution déjà proposée par quelqu'un d'autre
- - Afin que votre participation sois prise en compte, vous devez faire votre PR avant la deadline. <sub>*(qui sera spécifiée dans le sujet)*</sub>
- - Vous devez respecter le language imposé par le sujet <sub>*(ce sera spécifié dans le sujet)*</sub>
+ - Afin que votre participation soit prise en compte, vous devez faire votre PR avant la deadline. <sub>*(qui sera spécifiée dans le sujet)*</sub>
+ - Vous devez respecter le langage imposé par le sujet <sub>*(ce sera spécifié dans le sujet)*</sub>
  - Votre description de la PR doit expliquer comment vous avez résolu ce problème et fournir une courte explication de votre code.
  
  
@@ -44,7 +44,7 @@ Every Monday
 You can find the challenges pushed to this repository every Monday. The challenges will be announced on Slack when pushed. To submit your solution you need to submit a Pull Request (see <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">Creating a pull request on Github</a>). 
 The solution has to be pushed into the right folder and your filename has to be your login (e.g `chall00/adhanot.c`).
  
- <sub>Staff will evaluate your solution</sub>
+ <sub>Staff will evaluate your solutions</sub>
 
 ##### Rewards:
  - The first one to submit a working solution will earn `x` points for their coalition.
@@ -56,7 +56,7 @@ The solution has to be pushed into the right folder and your filename has to be 
  <sub>*All points will be uploaded on the intranet once the contest has ended.*</sub>
  
 ##### Rules:
- - You can't submit a solution already submited by someone else
+ - You can't submit a solution already submitted by someone else
  - You have to request your PR before the deadline to be able to participate. <sub>*(specified in the subjects)*</sub>
  - You have to respect the mandatory language requirement <sub>*(specified in the subjects)*</sub>
  - Your PR description should explain how you solved this problem and a short description of your code. 
