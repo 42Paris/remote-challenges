@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:23:00 by ffoissey          #+#    #+#             */
-/*   Updated: 2020/04/06 14:48:05 by ffoissey         ###   ########.fr       */
+/*   Updated: 2020/04/06 14:57:25 by ffoissey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		ft_strnequ(const char *s1, const char *s2, const size_t n)
 	return (i == n);
 }
 
-static int				ft_necklace(char *s1, char *s2)
+int				ft_necklace(char *s1, char *s2)
 {
 	size_t	len;
 	size_t	i;
