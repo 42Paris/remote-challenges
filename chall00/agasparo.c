@@ -15,8 +15,7 @@ int ft_cmp(int index, char *s1, char *s2)
 	int i;
 
 	i = 0;
-	while (i < ft_strlen(s2))
-	{
+	while (i < ft_strlen(s2)) {
 		if (s2[i] == '\0' || s1[i + index] == '\0')
 			break;
 		if (s2[i] != s1[index + i])
