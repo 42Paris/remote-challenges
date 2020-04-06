@@ -1,5 +1,5 @@
 
-// And remember, everything better with horses. Everything.
+// And remember, everything is better with horses. Everything.
 
 #include <string.h>
 #include <stdlib.h>
