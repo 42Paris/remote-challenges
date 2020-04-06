@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 
 int ft_nakelace(char *s1, char *s2)
@@ -26,13 +25,4 @@ int ft_nakelace(char *s1, char *s2)
 	}
 
 	return (ret);
-}
-
-int main(int argc, char **argv)
-{
-	if (argc == 3)
-	{
-		printf("result : [%d]\n", ft_nakelace(argv[1], argv[2]));
-	}
-	return 0;
 }
