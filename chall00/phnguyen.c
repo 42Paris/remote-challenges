@@ -6,19 +6,19 @@
 /*   By: phnguyen <phnguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:03:20 by phnguyen          #+#    #+#             */
-/*   Updated: 2020/04/06 14:37:39 by phnguyen         ###   ########.fr       */
+/*   Updated: 2020/04/06 14:45:35 by phnguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int ft_strlen(const char *s1);
-int	ft_strcmp(const char *s1, const char *s2);
-void ft_charswap(char *s1);
+int     ft_strlen(const char *s1);
+int     ft_strcmp(const char *s1, const char *s2);
+void    ft_charswap(char *s1);
 char	*ft_strdup(const char *s1);
-int ft_necklace(char *s1, char *s2);
+int     ft_necklace(char *s1, char *s2);
 
-int ft_strlen(const char *s1)
+int     ft_strlen(const char *s1)
 {
     int i;
 
@@ -28,7 +28,7 @@ int ft_strlen(const char *s1)
     return (i);
 }
 
-int	ft_strcmp(const char *s1, const char *s2)
+int 	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 && *s2 && *s1 == *s2)
 	{
@@ -43,7 +43,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 		return (-1);
 }
 
-void ft_charswap(char *s1)
+void    ft_charswap(char *s1)
 {
     char c;
 
@@ -73,7 +73,7 @@ char	*ft_strdup(const char *s1)
 	return (NULL);
 }
 
-int ft_necklace(char *s1, char *s2)
+int     ft_necklace(char *s1, char *s2)
 {
     char *t1;
     char temp;
