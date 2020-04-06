@@ -13,7 +13,7 @@ int ft_necklace( char *s1, char *s2 )
 	if ( ( len = strlen( s1 ) ) != strlen( s2 ) )
 		return 0;
 
-	// If len if zero, we can directly say we have a necklace ( a very shitty one tho )
+	// If len is zero, we can directly say we have a necklace ( a very shitty one tho )
 	if ( !len )
 		return 1;
 
@@ -48,4 +48,4 @@ top:	if ( !strcmp( s1, cs2 ) ) // Uh-Oh, a label ... does that mean .. no, it ca
 	goto top; // Aaaaah ! I knew it, a GOTO statement ! Run for your lives !
 }
 
-// Joke aside, i used goto to marry speed and concision
+// Joke aside, i used goto to make a custom loop, 'elegantly' marrying speed and concision :3
