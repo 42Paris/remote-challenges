@@ -33,6 +33,8 @@ int		ft_necklace(char *s1, char *s2)
 		return (1);
 	else if (!s1 || !s2)
 		return (0);
+	else if (strlen(s1) != strlen(s2))
+		return (0);
 	i = strlen(s1);
 	str = strdup(s1);
 	while (i)
