@@ -5,7 +5,7 @@
 
 ##### Quand:
 
-Tous les lundi
+Tous les lundis
 
 ##### Comment:
  
