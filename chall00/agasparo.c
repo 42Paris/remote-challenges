@@ -48,7 +48,8 @@ int ft_necklace(char *s1, char *s2)
 	while (i < ft_strlen(s1))
 	{
 
-		if (s1[i] == s2[0]) {
+		if (s1[i] == s2[0])
+		{
 			if (ft_cmp(i, s1, s2))
 				return (1);
 		}
