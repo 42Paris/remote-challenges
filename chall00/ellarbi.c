@@ -10,8 +10,8 @@ int		ft_necklace(char *s1, char *s2)
 
 	if (lens1 != lens2)
 		return 0;
-	strcpy(strtotal, s1);							// On copie 2 fois
-	strcpy(strtotal + lens1, s1);					// s1 dans strtotal
+	strcpy(strtotal, s1);					// On copie 2 fois
+	strcpy(strtotal + lens1, s1);				// s1 dans strtotal
 	res = (int)strstr(strtotal, s2);
 	if (res == 0)
 		return 0;					// On return 0
