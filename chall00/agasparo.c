@@ -15,7 +15,8 @@ int ft_cmp(int index, char *s1, char *s2)
 	int i;
 
 	i = 0;
-	while (i < ft_strlen(s2)) {
+	while (i < ft_strlen(s2))
+	{
 		if (s2[i] == '\0' || s1[i + index] == '\0')
 			break;
 		if (s2[i] != s1[index + i])
@@ -44,7 +45,8 @@ int ft_necklace(char *s1, char *s2)
 		return (0);
 	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);
-	while (i < ft_strlen(s1)) {
+	while (i < ft_strlen(s1))
+	{
 
 		if (s1[i] == s2[0]) {
 			if (ft_cmp(i, s1, s2))
