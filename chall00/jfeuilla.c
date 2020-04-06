@@ -12,6 +12,7 @@ int ft_necklace(char *s1, char *s2)
 		if (s1[i] == s2[j])
 		{
 			save = i;
+			len = 0;
 			while (s2[j] && s1[i] && s1[i] == s2[j])
 			{
 				i++;
