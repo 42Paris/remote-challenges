@@ -10,7 +10,11 @@ int ft_necklace(char *s1, char *s2) {
     size_t	i;
     size_t	j;
 	int		ret;
-
+	
+	if (!s1 && !s2)
+		return (1);
+	if (!s1 ||!s2)
+		return (0);
     if (strlen(s1) != strlen(s2))
 		return (0);
     i = -1;
