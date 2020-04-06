@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdio.h>
 
 int compare(char *s1, char *s2, unsigned int swaps, unsigned int len)
 {
