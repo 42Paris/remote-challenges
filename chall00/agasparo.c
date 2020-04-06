@@ -41,7 +41,7 @@ int ft_necklace(char *s1, char *s2)
 	i = 0;
 	if (!s1 && !s2)
 		return (1);
-	if (!s1 ||!s2)
+	if (!s1 || !s2)
 		return (0);
 	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);
