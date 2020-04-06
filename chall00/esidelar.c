@@ -42,8 +42,10 @@ int		ft_necklace(char *s1, char *s2)
 		temp = ft_add_char(str + 1, str[0]);
 		free(str);
 		str = strdup(temp);
-		free(str);
+		free(temp);
 		i--;
 	}
+	if (!strcmp(str, s2))
+		return (1);
 	return (0);
 }
