@@ -13,11 +13,11 @@ static int ft_firstcheck(char *s1, char *s2, size_t len1, size_t len2)
 static char *ft_movestr(char *s, size_t len)
 {
     int i = 1;
-    int j = 0;
     char c = s[0];
-    char *nstr = malloc(sizeof(char *) * 6);
+    char *nstr;
 
-
+    if (!(nstr = malloc(sizeof(char *) * 6)))
+        return(NULL);
     while (s[i])
     {
         nstr[i - 1] = s[i];
@@ -35,6 +35,8 @@ int ft_necklace(char *s1, char *s2)
     size_t i = 0;
     char *tmp = strdup(s2);
 
+    if (!tmp)
+        return (0);
     if (len1 == len2)
     {
         if (ft_firstcheck(s1, s2, len1, len2))
@@ -44,7 +46,8 @@ int ft_necklace(char *s1, char *s2)
         }
         while (i < len2)
         {
-            tmp = ft_movestr(tmp, len2);
+            if (!(tmp = ft_movestr(tmp, len2)))
+                return (0);
             if (strcmp(s1, tmp) == 0)
             {
                 free(tmp);
