@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 15:15:03 by fcals             #+#    #+#             */
-/*   Updated: 2020/04/06 15:42:37 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/06 16:03:03 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int					ft_necklace(char *s1, char *s2)
 	unsigned int	i;
 
 	if ((size = ft_strlen(s1)) != ft_strlen(s2))
-		return(-1);
+		return (0);
 	i = 0;
 	while (i < size)
 	{
