@@ -5,7 +5,7 @@ int			ft_necklace(char *s1, char *s2)
 	int		i = 1;
 	int		len = (int)strlen(s1);
 
-	if (len != strlen(s2))
+	if (len != (int)strlen(s2))
 		return (0);
 	else if (len == 0 || !strcmp(s1, s2))
 		return (1);
