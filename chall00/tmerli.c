@@ -31,9 +31,13 @@ int ft_necklace(char *str1, char *str2)
   while (i < len)
   {
     if (!strcmp(cp, str1))
+    {
       return (1);
+      free(cp);
+    }
     rotate(&cp, len);
     i++;
   }
+  free(cp);
   return (0);
 }
