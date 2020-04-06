@@ -38,7 +38,10 @@ int ft_necklace(char *s1, char *s2)
     if (len1 == len2)
     {
         if (ft_firstcheck(s1, s2, len1, len2))
+        {
+            free(tmp);
             return (1);
+        }
         while (i < len2)
         {
             tmp = ft_movestr(tmp, len2);
