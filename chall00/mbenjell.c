@@ -6,7 +6,7 @@
 /*   By: mbenjell <mbenjell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:18:40 by mbenjell          #+#    #+#             */
-/*   Updated: 2020/04/06 16:33:42 by mbenjell         ###   ########.fr       */
+/*   Updated: 2020/04/09 01:03:46 by mbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int				ft_necklace(char *s1, char *s2)
 {
 	int			length_1 = ft_strlen(s1);
 	int			length_2 = ft_strlen(s2);
-	int			n = 1;
-	int			m = length_1 - 1;
+	int			n = 0;
+	int			m = length_1;
 
 	if (length_1 == 0 && length_2 == 0)
 		return (1);
