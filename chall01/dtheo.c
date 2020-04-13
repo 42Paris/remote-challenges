@@ -11,6 +11,8 @@ char    *ft_rgb2hex(int r, int g, int b)
 {
     char *hex;
 
+    if (r < 0 || g < 0 || b < 0)
+        return (NULL);
     if (!(hex = (char *)malloc(sizeof(char) * 8)))
         return (NULL);
     hex[0] = '#';
