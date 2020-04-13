@@ -1,7 +1,5 @@
-#include <assert.h>
-#include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
 
 char	*ft_itoh(int value)
 {
@@ -35,6 +33,9 @@ char	*ft_itoh(int value)
 
 char *ft_rgb2hex(int r, int g, int b)
 {
+	if (r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
+		return (NULL);
+
 	char *hex = (char *)calloc(sizeof(char), 8);
 
 	char *p1 = ft_itoh(r);
@@ -52,6 +53,8 @@ char *ft_rgb2hex(int r, int g, int b)
 	return hex;
 }
 
+/*
+#include <assert.h>
 int		main(int argc, char **argv)
 {
 	assert(strcmp(ft_rgb2hex(252, 186, 3), "#fcba03") == 0);
@@ -61,3 +64,4 @@ int		main(int argc, char **argv)
 
 	return (0);
 }
+*/
