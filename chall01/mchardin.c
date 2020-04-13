@@ -231,8 +231,3 @@ char *ft_rgb2hex(int r, int g, int b)
 	free(tmp);
 	return(hexa_nb);
 }
-
-int main()
-{
-	printf("%d", strcmp(ft_rgb2hex(0, 0, 0), "#0"));
-}
