@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 char *ft_rgb2hex(int r, int g, int b)
