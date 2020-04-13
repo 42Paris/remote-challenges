@@ -6,7 +6,7 @@
 /*   By: amalsago <amalsago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:46:30 by amalsago          #+#    #+#             */
-/*   Updated: 2020/04/13 18:11:22 by amalsago         ###   ########.fr       */
+/*   Updated: 2020/04/13 22:08:27 by amalsago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	hex[8];
 
 char	*ft_rgb2hex(int r, int g, int b)
 {
-	if (r < 0 || g < 0 || b < 0)
+	if (r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
 		return (NULL);
 	hex[0] = '#';
 	sprintf(hex + 1, "%02x", r);
