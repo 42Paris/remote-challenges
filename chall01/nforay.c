@@ -16,13 +16,13 @@ char	*ft_rgb2hex(int r, int g, int b)
 		return (NULL);
 	if (!(str = malloc(sizeof(char) * 8)))
 		return (NULL);
-	str[1] = '#';
-	str[2] = hex[r / 16];
-	str[3] = hex[r % 16];
-	str[4] = hex[g / 16];
-	str[5] = hex[g % 16];
-	str[6] = hex[b / 16];
-	str[7] = hex[b % 16];
-	str[8] = '\0';
+	str[0] = '#';
+	str[1] = hex[r / 16];
+	str[2] = hex[r % 16];
+	str[3] = hex[g / 16];
+	str[4] = hex[g % 16];
+	str[5] = hex[b / 16];
+	str[6] = hex[b % 16];
+	str[7] = '\0';
 	return (str);
 }
