@@ -48,23 +48,26 @@ static char*	int255_to_hex(int r, int g, int b, char *res)
 	res[2] = '0';
 	res[4] = '0';
 	res[6] = '0';
-	while (r)
+	do
 	{
 		res[i++] = base_16[r % 16];
 		r /= 16;
 	}
+	while (r);
 	i = 3;
-	while (g)
+	do
 	{
 		res[i++] = base_16[g % 16];
 		g /= 16;
 	}
+	while (g);
 	i = 5;
-	while (b)
+	do
 	{
 		res[i++] = base_16[b % 16];
 		b /= 16;
 	}
+	while (b);
 	return (invert_2_by_2(res));
 }
 
