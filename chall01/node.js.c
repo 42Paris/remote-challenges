@@ -125,5 +125,10 @@ char *ft_rgb2hex(int r, int g, int b)
 	str = color(r, str);
 	str = color(g, str);
 	str = color(b, str);
+	if (strlen(str) != 7)
+	{
+		free(str);
+		return (NULL);
+	}
 	return (str);
 }
