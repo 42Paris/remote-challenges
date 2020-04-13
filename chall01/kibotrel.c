@@ -59,5 +59,6 @@ char	*ft_rgb2hex(int r, int g, int b)
 		hex[i] = color[i - 1];
 	hex[0] = '#';
 	hex[size + 1] = '\0';
+	free(color);
 	return (hex);
 }
