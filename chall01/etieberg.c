@@ -11,9 +11,7 @@ char *ft_rgb2hex(int r, int g, int b)
 		return (NULL);
 	if (!(str = (char*)malloc(sizeof(char) * 8)))
 		return (NULL);
-	str[0] = '#';
 	rgb = ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
-	str[7] = '\0';
-	sprintf(str+1,"%06lx", rgb);
+	sprintf(str,"#%06lx", rgb);
 	return (str);
 }
