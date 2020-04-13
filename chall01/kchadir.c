@@ -7,7 +7,8 @@
         char *dicohex;
 
         dicohex = "0123456789abcdef";
-        if (!(res = (char *)malloc(sizeof(char) * 8)))
+    if (!(res = (char *)malloc(sizeof(char) * 8)) || r < 0 || r > 255
+        || g < 0 || g > 255 || b < 0 || b > 255 )
             return NULL;
         res[0] = '#';
         res[1] = dicohex[r / 16];
