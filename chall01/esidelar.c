@@ -120,7 +120,10 @@ char *ft_rgb2hex(int r, int g, int b)
 	char *str = strdup("");
 
 	if (r > 255 || r < 0 || g > 255 || g < 0 || b > 255 || b < 0)
+	{
+		free(str);
 		return (NULL);
+	}
 	str = ft_add_char(str, '#');
 	str = color(r, str);
 	str = color(g, str);
