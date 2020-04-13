@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:32:56 by mli               #+#    #+#             */
-/*   Updated: 2020/04/13 18:04:27 by mli              ###   ########.fr       */
+/*   Updated: 2020/04/14 00:07:17 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,19 @@
 
 const char *base = "0123456789abcdef";
 
-char *ft_rgb2hex(int r, int g, int b)
+int		ft_good_color(int c)
+{
+	if (c >= 0 && c <= 255)
+		return (1);
+	return (0);
+}
+
+char	*ft_rgb2hex(int r, int g, int b)
 {
 	char *ret;
 
+	if (!ft_good_color(r) || !ft_good_color(g) || !ft_good_color(b))
+		return (NULL);
 	if (!(ret = malloc(sizeof(char) * 8)))
 		return (NULL);
 	ret[0] = '#'; ret[7] = '\0';
