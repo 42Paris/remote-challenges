@@ -6,7 +6,7 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 18:03:41 by dait-atm          #+#    #+#             */
-/*   Updated: 2020/04/13 18:09:22 by dait-atm         ###   ########.fr       */
+/*   Updated: 2020/04/13 18:56:01 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ static char		*i2h(int m)
 	unsigned char	nbc;
 	char			*a;
 
-	a = malloc(sizeof(char) * 8);
+	if (!(a = malloc(sizeof(char) * 8)))
+		return (NULL);
 	ft_strncpy(a, "#000000", 8);
 	if (!m)
 		return (a);
@@ -81,6 +82,8 @@ static char		*i2h(int m)
 
 char			*ft_rgb2hex(int r, int g, int b)
 {
+	if (r < 0 || g < 0 || b < 0 || r > 0xff || g > 0xff || b > 0xff)
+		return (NULL);
 	r = (0xff & r) << 16;
 	r += (0xff & g) << 8;
 	r += (0xff & b);
