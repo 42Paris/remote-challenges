@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 void    put_char_hex_buff(unsigned char val, char *buff, size_t offset)
 {
