@@ -25,13 +25,17 @@ void int2hex(int n, char *hex)
 char *ft_rgb2hex(int r, int g, int b)
 {
 	char *hex;
-
-	if ((hex = (char *)malloc(8)) == NULL)
-		return(NULL);
-	hex[0] = '#';
-	int2hex(r, hex+1);
-	int2hex(g, hex+3);
-	int2hex(b, hex+5);
-	hex[7] = '\0';
-	return(hex);
+	
+	if (r >= 0 && g >= 0 && b >= 0)
+	{
+		if ((hex = (char *)malloc(8)) == NULL)
+			return(NULL);
+		hex[0] = '#';
+		int2hex(r, hex+1);
+		int2hex(g, hex+3);
+		int2hex(b, hex+5);
+		hex[7] = '\0';
+		return(hex);
+	}
+	return(NULL);
 }
