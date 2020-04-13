@@ -6,7 +6,7 @@ char *ft_rgb2hex(int r, int g, int b)
 	char color;
 	char *base = "0123456789abcdef";
 	
-	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 256)
+	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		return (NULL);
 	if (!(hex = calloc(8, sizeof(char))))
 		return (NULL);
