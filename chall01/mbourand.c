@@ -3,7 +3,10 @@
 char *ft_rgb2hex(int r, int g, int b)
 {
 	char *base = "0123456789abcdef";
-	char *hex = malloc(sizeof(char) * 8);
+	
+	char *hex;
+	if (!(hex = malloc(sizeof(char) * 8)) || r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
+		return (0);
 
 	hex[0] = '#';
 	hex[1] = base[r / 16];
