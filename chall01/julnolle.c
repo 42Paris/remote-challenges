@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:54:31 by julnolle          #+#    #+#             */
-/*   Updated: 2020/04/13 15:36:02 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/13 15:43:20 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ char	*ft_rgb2hex(int r, int g, int b)
 	char	*str;
 
 	str = NULL;
-	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
+	if (r < 0 || r > 256 || g < 0 || g > 256 || b < 0 || b > 256)
 		return (NULL);
 	color = rgb_to_int(r, g, b);
 	str = ft_itoa_base(color, "0123456789abcdef");
