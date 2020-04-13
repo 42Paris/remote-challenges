@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /*
 ** Needed to compile without warning, see
 ** https://github.com/nicowilliams/inplace/issues/6
@@ -7,8 +5,8 @@
 */
 
 #define _GNU_SOURCE 1
+#include <stdio.h>
 
-int     asprintf(char **str, char *format, ...);
 
 /*
 ** We create a color from r, g and b (considered as char)
