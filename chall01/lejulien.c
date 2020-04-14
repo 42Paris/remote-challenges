@@ -6,7 +6,7 @@
 /*   By: lejulien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:14:31 by lejulien          #+#    #+#             */
-/*   Updated: 2020/04/13 16:01:56 by lejulien         ###   ########.fr       */
+/*   Updated: 2020/04/13 17:20:36 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ char
 	if (!(res = malloc(8 * sizeof(char))))
 		return (NULL);
 	res[0] = '#';
-	res[1] = ft_hex_base(r, "0123456789abcdef");
-	r = r / 16;
 	res[2] = ft_hex_base(r, "0123456789abcdef");
-	res[3] = ft_hex_base(g, "0123456789abcdef");
-	g = g / 16;
+	r = r / 16;
+	res[1] = ft_hex_base(r, "0123456789abcdef");
 	res[4] = ft_hex_base(g, "0123456789abcdef");
-	res[5] = ft_hex_base(b, "0123456789abcdef");
-	b = b / 16;
+	g = g / 16;
+	res[3] = ft_hex_base(g, "0123456789abcdef");
 	res[6] = ft_hex_base(b, "0123456789abcdef");
+	b = b / 16;
+	res[5] = ft_hex_base(b, "0123456789abcdef");
 	res[7] = '\0';
 	return (res);
 }
