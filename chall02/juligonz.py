@@ -6,7 +6,7 @@
 #    By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/20 14:15:41 by juligonz          #+#    #+#              #
-#    Updated: 2020/04/20 14:26:41 by juligonz         ###   ########.fr        #
+#    Updated: 2020/04/20 14:39:29 by juligonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,28 +39,18 @@ dict_morse = {
     'x' : "-..-",
     'y' : "-.--",
     'z' : "--..",
-    '0' : "-----",
-    '1' : ".----",
-    '2' : "..---",
-    '3' : "...--",
-    '4' : "....-",
-    '5' : ".....",
-    '6' : "-....",
-    '7' : "--...",
-    '8' : "---..",
-    '9' : "----.",
-    ' ' : "/"
+    ' ' : ""
 }
 
 def print_usage():
-    print("usage : ./" + sys.argv[0], "<a-zA-Z string>")
+    print("usage: ./" + sys.argv[0], "<a-zA-Z string>")
 
-if len(sys.argv) < 2:
+if len(sys.argv) != 2 or not sys.argv[1]:
     print_usage()
     sys.exit()
-s = " ".join(sys.argv[1:]).lower()
+s = " ".join(sys.argv[1]).lower()
 
 try:
-    print(" ".join([dict_morse[c]  for c in s]))
+    print("".join([dict_morse[c]  for c in s]))
 except KeyError:
     print_usage()
