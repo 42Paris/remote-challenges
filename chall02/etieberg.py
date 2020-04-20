@@ -20,7 +20,7 @@ if __name__ == "__main__":
 			if not chunk.isalpha():
 				raise ValueError
 	except ValueError:
-		print("usage: ./xlogin.py <a-zA-Z string>")
+		print("usage: {} <a-zA-Z string>".format(sys.argv[0]))
 		sys.exit()
 	string = text.lower()
 	morse = zip(alphabet, morse_code)
