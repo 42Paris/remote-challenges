@@ -2,7 +2,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    xlogin.py                                          :+:      :+:    :+:    #
+#    hthomas.py                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -16,7 +16,7 @@ import string
 
 if __name__ == "__main__":
     if not len(sys.argv) == 2 or (len(sys.argv) == 2 and (len(sys.argv[1]) == 0 or not all(x.isalpha() or x.isspace() for x in sys.argv[1]))):
-        print('usage: ./xlogin.py <a-zA-Z string>')
+        print('usage: ./hthomas.py <a-zA-Z string>')
     else:
         file = open("morse.txt", "r")
         lines = file.readlines()
