@@ -6,7 +6,7 @@
 #    By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/20 14:15:41 by juligonz          #+#    #+#              #
-#    Updated: 2020/04/20 14:39:29 by juligonz         ###   ########.fr        #
+#    Updated: 2020/04/20 14:44:55 by juligonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ dict_morse = {
 }
 
 def print_usage():
-    print("usage: ./" + sys.argv[0], "<a-zA-Z string>")
+    print("usage:", sys.argv[0], "<a-zA-Z string>")
 
 if len(sys.argv) != 2 or not sys.argv[1]:
     print_usage()
