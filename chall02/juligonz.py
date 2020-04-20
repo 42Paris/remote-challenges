@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    juligonz.py                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/20 14:15:41 by juligonz          #+#    #+#              #
+#    Updated: 2020/04/20 14:26:41 by juligonz         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 import sys
 
 dict_morse = {
@@ -40,11 +52,15 @@ dict_morse = {
     ' ' : "/"
 }
 
+def print_usage():
+    print("usage : ./" + sys.argv[0], "<a-zA-Z string>")
+
 if len(sys.argv) < 2:
+    print_usage()
     sys.exit()
 s = " ".join(sys.argv[1:]).lower()
 
 try:
     print(" ".join([dict_morse[c]  for c in s]))
 except KeyError:
-    print ("ERROR")
+    print_usage()
