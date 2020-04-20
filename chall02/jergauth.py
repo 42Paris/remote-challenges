@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from sys import argv, stderr
+from sys import argv
 from string import ascii_lowercase
 
 morse_values = [
@@ -46,4 +46,4 @@ if __name__ == "__main__":
     if len(argv) == 2 and argv[1] and isAlphaString(argv[1]):
         print(encode(argv[1]))
     else:
-        print("usage: ./jergauth.py <a-zA-Z string>", file=stderr)
+        print("usage: ./jergauth.py <a-zA-Z string>")
