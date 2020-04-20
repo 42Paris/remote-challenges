@@ -1,10 +1,10 @@
-<h1 align="center"><code>Chall01 / String to Morse</code></h1>
+<h1 align="center"><code>Chall02 / String to Morse</code></h1>
 
 
 ---
 
 ### Instructions
-<sub>**Turn-in directory:** `chall01/`</sub><br />
+<sub>**Turn-in directory:** `chall02/`</sub><br />
 <sub>**Files to turn in:** `<xlogin>.py`</sub><br />
 <sub>**Language:** `Python 3.x`</sub>
 
