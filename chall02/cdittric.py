@@ -30,7 +30,7 @@ morse = [
 "--..",
 ]
 
-if (len(sys.argv) != 2):
+if (len(sys.argv) != 2 or len(sys.argv[1]) == 0):
     print("usage: ", sys.argv[0], " <a-zA-Z string>")
     sys.exit();
 
