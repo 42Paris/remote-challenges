@@ -12,9 +12,6 @@ for i in range(len(str)):
     if not str[i].isalpha() and not str[i] == ' ':
         print("usage: ./fyusuf-a <a-zA-Z string>")
         sys.exit(0)
-# if not sys.argv[1].isalpha():
-    # print("usage: ./fyusuf-a <a-zA-Z string>")
-    # sys.exit(0)
 str = sys.argv[1].lower()
 alphabet = {
    'a':'.-',
