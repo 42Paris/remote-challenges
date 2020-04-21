@@ -40,7 +40,6 @@ def correctString(str) :
 	return 1
 
 for i in sys.argv :
-	print(i)
 	if correctString(i) :
 		temp = ""
 		for c in i :
