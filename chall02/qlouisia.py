@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 import sys
 
-usage = "usage: ./xlogin.py <a-zA-Z string>"
+usage = "usage: ./qlouisia.py <a-zA-Z string>"
 
 cypher = {
 "a":".-",
