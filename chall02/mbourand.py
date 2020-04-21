@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import string
 
@@ -18,7 +20,7 @@ AUTHORIZED_CHARACTERS = set(string.ascii_letters + ' ')
 def str2morse(str):
 	str = str.upper()
 	for c in str:
-		print(ALPHABET[c], end = '')
+		print(ALPHABET[c], end='')
 	print("")
 
 if __name__ == "__main__":
