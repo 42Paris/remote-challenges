@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 conv = [".-",
@@ -32,9 +33,19 @@ conv = [".-",
 # a partir de cette dernière en convertissant chaque caractère par sa correspondance dans un tableau.
 # Pour se faire, j'utilise des boucle de parcourt de liste, deux fonction propres aux chainees de
 # caractères et ord() qui renvoit la valeur ascii d'un caractère.
+def correctString(str) :
+	for c in str :
+		if (not c.isalpha()) and c != ' ' :
+			return 0
+	return 1
+
 for i in sys.argv :
-	if i.isalpha() :
+	print(i)
+	if correctString(i) :
 		temp = ""
 		for c in i :
-			temp += conv[ord(c.upper()) - ord('A')]
+			if c == ' ' :
+				temp += " "
+			else :
+				temp += conv[ord(c.upper()) - ord('A')]
 		print(temp)
