@@ -6,7 +6,7 @@
 #    By: lejulien <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/20 17:21:09 by lejulien          #+#    #+#              #
-#    Updated: 2020/04/20 18:02:17 by lejulien         ###   ########.fr        #
+#    Updated: 2020/04/20 21:18:02 by lejulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ MORSE = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.',
           'U':'..-', 'V':'...-', 'W':'.--', 'X':'-..-', 'Y':'-.--',
           'Z':'--..'}
 
-if (len(sys.argv) == 2):
+if (len(sys.argv) == 2 and len(sys.argv[1]) > 0):
     if (all(x.isalpha() or x.isspace() for x in sys.argv[1])):
         sys.argv[1] = sys.argv[1].upper()
         for x in sys.argv[1]:
