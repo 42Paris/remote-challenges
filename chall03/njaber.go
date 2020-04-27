@@ -28,13 +28,10 @@ func main() {
 	log.Print("GET " + url)
 	resp1, err := http.Get(url)
 	if err != nil {
-		log.Fatal("la callotte de ses morts")
+		log.Fatal("Some fatal error")
 	}
 	defer resp1.Body.Close()
-	body, err := ioutil.ReadAll(resp1.Body)
-	if err != nil {
-		log.Fatal("le sang de ses morts")
-	}
+	body, _ := ioutil.ReadAll(resp1.Body)
 
 	bodyStr := string(body)
 	log.Print(bodyStr)
@@ -48,13 +45,10 @@ func main() {
 
 	resp2, err := http.Get(answer)
 	if err != nil {
-		log.Fatal("la callotte de ses morts")
+		log.Fatal("Some fatal error")
 	}
 	defer resp2.Body.Close()
-	body, err = ioutil.ReadAll(resp2.Body)
-	if err != nil {
-		log.Fatal("le sang de ses morts")
-	}
+	body, _ = ioutil.ReadAll(resp2.Body)
 
 	bodyStr = string(body)
 	log.Print(bodyStr)
