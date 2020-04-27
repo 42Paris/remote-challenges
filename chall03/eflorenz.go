@@ -56,11 +56,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	hex := fmt.Sprintf("%02x%02x%02x", r, g, b) // Format r, g and b to hex with 0 padding
+	hex := fmt.Sprintf("%02x%02x%02x", r, g, b) // Format r, g and b to hex with 2 width and "0" padding
 
 	addr = fmt.Sprintf("%s?id=%s&resp=%s", addr, id, hex) // New address
 
-	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the new new request
+	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the new request
 	req, err = http.NewRequest("GET", addr, nil)        // Prepare the request
 	if err != nil {                                     // Check for errors
 		log.Fatal(err)
