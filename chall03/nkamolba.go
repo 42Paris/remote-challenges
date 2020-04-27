@@ -18,14 +18,14 @@ func main() {
 	fmt.Printf("0ms - GET %s\n", url1)
 
 	// get first response
-	resp, err := http.Get(url1)
+	resp1, err := http.Get(url1)
 	if err != nil {
 		panic(err)
 	}
-	defer resp.Body.Close()
+	defer resp1.Body.Close()
 
 	// read response
-	body1, err := ioutil.ReadAll(resp.Body)
+	body1, err := ioutil.ReadAll(resp1.Body)
 	if err != nil {
 		panic(err)
 	}
@@ -56,6 +56,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer resp2.Body.Close()
 
 	// read response 2
 	body2, err := ioutil.ReadAll(resp2.Body)
