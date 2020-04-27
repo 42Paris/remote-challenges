@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// Getbody return the body from a get request, and print
+// Getbody Print the query time and the body. Return the body from the GET query.
 func Getbody(url string) string {
 	start := time.Now()
 	resp, _ := http.Get(url)
