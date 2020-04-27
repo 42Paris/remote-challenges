@@ -11,58 +11,56 @@ import (
 )
 
 func main() {
-	client := &http.Client{}
-	addr := "https://chall03.hive.fi/"
-	start := time.Now()
+	client := &http.Client{}           // Set a Client object
+	addr := "https://chall03.hive.fi/" // First addr
+	start := time.Now()                // Get the start time to time everything
 
-	fmt.Println(time.Now().Sub(start), " - GET ", addr) // On annonce la requète
-	req, err := http.NewRequest("GET", addr, nil)       // On prépare la requète
-	if err != nil {                                     // Gestion d'erreur
+	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the request
+	req, err := http.NewRequest("GET", addr, nil)       // Prepare the request
+	if err != nil {                                     // Check for errors
 		log.Fatal(err)
 	}
 
-	resp, err := client.Do(req) // On execute la requète
-	if err != nil {             // Gestion d'erreur
+	resp, err := client.Do(req) // Execute the request
+	if err != nil {             // Check for error
 		log.Fatal(err)
 	}
 	if resp.StatusCode != 200 {
 		log.Fatalf("HTTP : %d", resp.StatusCode)
 	}
 
-	defer resp.Body.Close()                             // On fermera le Body après sa lecture
-	body, _ := ioutil.ReadAll(resp.Body)                // On lit l'entièreté du Body
-	fmt.Println(time.Now().Sub(start), " - GET ", addr) // On annonce qu'on a bien reçu une réponse
+	defer resp.Body.Close()                             // Will close the Body when done
+	body, _ := ioutil.ReadAll(resp.Body)                // Read the Body
+	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the answer
 	fmt.Printf("answer : %s\n", body)
 
-	reg, _ := regexp.Compile(`id=(\d+),r=(\d+),g=(\d+),b=(\d+)`) // On compile une regexp pour extraire les informations qui nous intéresse du body
-	strs := reg.FindSubmatch(body)                               // On cherche les match et les submatchs (groupes entre paranthèses)
-	id, _ := strconv.Atoi(string(strs[1]))                       // On converti tout ça vers des int
-	r, _ := strconv.Atoi(string(strs[2]))
+	reg, _ := regexp.Compile(`id=(\d+),r=(\d+),g=(\d+),b=(\d+)`) // Compile a regexp that will get what we need
+	strs := reg.FindSubmatch(body)                               // Execute the regexp with the FindSubmatch method
+	id := string(strs[1])                                        // Convert id to string
+	r, _ := strconv.Atoi(string(strs[2]))                        // Convert r, g and b to int
 	g, _ := strconv.Atoi(string(strs[3]))
 	b, _ := strconv.Atoi(string(strs[4]))
 
-	hex := fmt.Sprintf("%02x%02x%02x", r, g, b) // On converti les rgb vers leur format hexadécimal d'arrivée
-	//fmt.Println(id)
-	//fmt.Println(hex)
+	hex := fmt.Sprintf("%02x%02x%02x", r, g, b) // Format r, g and b to hex with 0 padding
 
-	addr = fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%s", id, hex) // On fait un string de la nouvelle adresse
+	addr = fmt.Sprintf("%s?id=%s&resp=%s", addr, id, hex) // New address
 
-	fmt.Println(time.Now().Sub(start), " - GET ", addr) // On annonce la nouvelle requète
-	req, _ = http.NewRequest("GET", addr, nil)          // On prépare la requète
-	if err != nil {                                     // Gestion d'erreur
+	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the new new request
+	req, _ = http.NewRequest("GET", addr, nil)          // Prepare the request
+	if err != nil {                                     // Check for errors
 		log.Fatal(err)
 	}
 
-	resp, _ = client.Do(req) // On execute la requète
-	if err != nil {          // Gestion d'erreur
+	resp, _ = client.Do(req) // Execute the request
+	if err != nil {          // Check for errors
 		log.Fatal(err)
 	}
 	if resp.StatusCode != 200 {
 		log.Fatalf("HTTP : %d", resp.StatusCode)
 	}
 
-	defer resp.Body.Close()                             // On fermera le Body quand on l'aura lu
-	body, _ = ioutil.ReadAll(resp.Body)                 // On lit le Body entièrement
-	fmt.Println(time.Now().Sub(start), " - GET ", addr) // On annonce qu'on a bien reçu la réponse
+	defer resp.Body.Close()                             // Will close the Body when done
+	body, _ = ioutil.ReadAll(resp.Body)                 // Read the Body
+	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the answer
 	fmt.Printf("answer : %s\n", body)
 }
