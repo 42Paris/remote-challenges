@@ -47,7 +47,7 @@ func main() {
 	if err != nil {
 		panic("b not an int")
 	}
-	hexa := fmt.Sprintf("%x%x%x", r, g, b)
+	hexa := fmt.Sprintf("%02x%02x%02x", uint16(r), uint16(g), uint16(b))
 
 	endpoint := fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%s", id, hexa)
 	fmt.Printf("%s: GET %s\n", time.Since(start), endpoint)
