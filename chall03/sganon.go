@@ -6,9 +6,12 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
+	start := time.Now()
+	fmt.Print("0ms: GET https://chall03.hive.fi/\n")
 	res, err := http.Get("https://chall03.hive.fi/")
 	if err != nil {
 		panic("cannot make request to https://chall03.hive.fi/")
@@ -18,6 +21,7 @@ func main() {
 		panic("unable to read body")
 	}
 	defer res.Body.Close()
+	fmt.Printf("%s: GET https://chall03.hive.fi/\n\t - answer: %s\n", time.Since(start), string(raw))
 
 	parts := strings.Split(string(raw), "-")
 	if len(parts) != 2 {
@@ -43,13 +47,21 @@ func main() {
 	if err != nil {
 		panic("b not an int")
 	}
-	hexa := fmt.Sprintf("%X%X%X", r, g, b)
+	hexa := fmt.Sprintf("%x%x%x", r, g, b)
 
-	res, err = http.Get(fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp%s", id, hexa))
+	endpoint := fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%s", id, hexa)
+	fmt.Printf("%s: GET %s\n", time.Since(start), endpoint)
+	res, err = http.Get(endpoint)
 	if err != nil {
 		panic("error sending hexa")
 	}
-	if res.StatusCode != http.StatusOK {
+	/*if res.StatusCode != http.StatusOK {
 		panic("error bad response code")
+	}*/
+	raw, err = ioutil.ReadAll(res.Body)
+	if err != nil {
+		panic("cannot read body")
 	}
+	defer res.Body.Close()
+	fmt.Printf("%s: GET %s\n\t - answer: %s\n", time.Since(start), endpoint, string(raw))
 }
