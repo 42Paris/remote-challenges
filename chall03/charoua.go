@@ -4,7 +4,6 @@ import "time"
 import "net/http"
 import "fmt"
 import "io/ioutil"
-import "log"
 import "strings"
 import "strconv"
 
@@ -42,7 +41,7 @@ import "strconv"
 	resp, err = http.Get(fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%02x%02x%02x", id, r, g, b))
 	fmt.Printf("%dms - GET https://chall03.hive.fi/?id=%d&resp=%02x%02x%02x\n",time.Since(start).Milliseconds(), id, r, g, b)
 	if err != nil {
-		log.Fatal(err)
+		panic("failure of the Gnswer back to https://chall03.hive.fi/")
 	}
 	if resp.StatusCode == http.StatusOK {
 		fmt.Printf("%dms - GET https://chall03.hive.fi/?id=%d&resp=%02x%02x%02x\n\tanswer: ok!\n",time.Since(start).Milliseconds(), id, r, g, b)
