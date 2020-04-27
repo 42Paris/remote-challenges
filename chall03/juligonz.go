@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// Getbody return the body from a get request, and print
 func Getbody(url string) string {
 	start := time.Now()
 	resp, _ := http.Get(url)
@@ -16,6 +17,7 @@ func Getbody(url string) string {
 	return body
 }
 
+// Getparams Build and return the parameter string
 func Getparams(body string) string {
 	var id, r, g, b int
 	fmt.Sscanf(body, "id=%d,r=%d,g=%d,b=%d", &id, &r, &g, &b)
@@ -28,8 +30,5 @@ func main() {
 
 	body := Getbody(url)
 	params := Getparams(body)
-	body = Getbody(url + params)
-
-	//	fmt.Printf("%dms response:\n\n%s", time.Since(start).Milliseconds(), body)
-
+	Getbody(url + params)
 }
