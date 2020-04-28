@@ -35,10 +35,10 @@ func main() {
 	}
 	defer resp.Body.Close()
 	bytes, err = ioutil.ReadAll(resp.Body)
-	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url + param)
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url + param)
 	body = string(bytes)
 	fmt.Printf("%dms - GET %s\n\tanswer:%s\n", time.Since(start).Milliseconds(), url + param, body)
 	fmt.Printf("%dms - DONE\n", time.Since(start).Milliseconds())
