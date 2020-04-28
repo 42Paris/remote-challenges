@@ -29,8 +29,8 @@ func main() {
 	var id, r, g, b int
 	fmt.Sscanf(body, "id=%d,r=%d,g=%d,b=%d", &id, &r, &g, &b)
 	param := fmt.Sprintf("?id=%d&resp=%02x%02x%02x", id, r, g, b)
-	resp, err = http.Get(url + param)
 	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url + param)
+	resp, err = http.Get(url + param)
 	if err != nil {
 		log.Fatal(err)
 	}
