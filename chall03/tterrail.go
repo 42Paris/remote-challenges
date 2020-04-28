@@ -6,10 +6,9 @@ import "io/ioutil"
 import "strings"
 import "strconv"
 import "fmt"
+import "time"
 
-var (
-	host = "https://chall03.hive.fi"
-)
+const host = "https://chall03.hive.fi"
 
 func getValue(str string) int {
 	val, err := strconv.Atoi(strings.Split(str, "=")[1])
@@ -22,7 +21,10 @@ func getValue(str string) int {
 
 
 func main(){
-	resp, err := http.Get(host)
+	start := time.Now()
+	client := &http.Client{
+	}
+	resp, err := client.Get(host)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -42,15 +44,15 @@ func main(){
 	if len(args) != 4 {
 		log.Fatalf("Expecting 4 args got %d\n", len(args))
 	}
-	log.Printf("Received RGB %s\n", args)
+	log.Printf("%v > Received Args %s\n", time.Since(start),args)
 	id := getValue(args[0])
 	r := getValue(args[1])
 	g := getValue(args[2])
 	b := getValue(args[3])
 	hex := fmt.Sprintf("%02x%02x%02x", r, g, b)
 	url := "https://" + strings.Replace(strings.Replace(sbody[6], "<id>", strconv.Itoa(id), 1), "<hex>", hex, 1)
-	log.Printf("Sending Hex to %s\n", url)
-	req, err := http.Get(url)
+	log.Printf("%v > Sending Hex to %s\n", time.Since(start), url)
+	req, err := client.Get(url)
 	if err != nil {
 		log.Fatalf("Unable to send response, %s", err)
 	}
@@ -61,6 +63,6 @@ func main(){
 	if err != nil {
 		log.Fatalf("Unable to send response, %s", err)
 	}
-	log.Printf("Success: %s\n", string(body))
+	log.Printf("%v > Success: %s\n", time.Since(start), string(body))
 	req.Body.Close()
 }
