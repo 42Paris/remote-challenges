@@ -30,6 +30,7 @@ func main() {
 	fmt.Sscanf(body, "id=%d,r=%d,g=%d,b=%d", &id, &r, &g, &b)
 	param := fmt.Sprintf("?id=%d&resp=%02x%02x%02x", id, r, g, b)
 	resp, err = http.Get(url + param)
+	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url + param)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -38,7 +39,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url + param)
 	body = string(bytes)
 	fmt.Printf("%dms - GET %s\n\tanswer:%s\n", time.Since(start).Milliseconds(), url + param, body)
 	fmt.Printf("%dms - DONE\n", time.Since(start).Milliseconds())
