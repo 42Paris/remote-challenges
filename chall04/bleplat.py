@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # Tested with Python3.5.3
 
-import readline
 import sys
 import array
 
