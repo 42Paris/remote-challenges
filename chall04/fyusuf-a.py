@@ -42,6 +42,9 @@ def loop(tab, dim):
 
 parse_str = sys.stdin.read()
 (dim, index) = atoi(0, parse_str)
+if index == 0:
+    print ("No digit to parse at the beginning of input")
+    sys.exit(1)
 if dim == 0:
     sys.exit(0)
 index = parse_newline(index, parse_str)
