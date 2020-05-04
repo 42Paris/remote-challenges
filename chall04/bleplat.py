@@ -25,9 +25,12 @@ try:
         lines.append(bytearray(line.encode('ascii')));
         # Checking the line count
         if (len(lines) > grid_size):
-            raise Exception("Wrong count of lines")
+            raise Exception("Too many lines")
         # next line
         line = sys.stdin.readline()
+    # checking if we have enough lines
+    if (len(lines) != grid_size):
+        raise Exception("not enough lines")
     
     running = True
     while running:
