@@ -15,7 +15,7 @@
 <sub>**Files to turn in:** `<xlogin>.go`</sub><br />
 <sub>**Language:** `Go`</sub>
 
-<sub>**Deadline:** 03.04.2020 - 10:42am</sub>
+<sub>**Deadline:** 29.04.2020 - 23:42am</sub>
 <br /><br />
 ### Subject
 
