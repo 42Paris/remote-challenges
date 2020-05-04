@@ -6,7 +6,7 @@
 #    By: hbaudet <hbaudet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/04 16:04:40 by hbaudet           #+#    #+#              #
-#    Updated: 2020/05/04 17:05:07 by hbaudet          ###   ########.fr        #
+#    Updated: 2020/05/04 17:19:11 by hbaudet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,12 @@ for i in range (size):
 			exit("Invalid character : " + c)
 	ret.append(list(line))
 
-for i in range (size - 1):
-	for j in range (size):
-		if ret[i][j] == '.' and ret[i + 1][j] == ' ':
-			ret[i][j] = ' '
-			ret[i + 1][j] = '.'
+for _ in range (size - 1):
+	for i in range (size - 1):
+		for j in range (size):
+			if ret[i][j] == '.' and ret[i + 1][j] == ' ':
+				ret[i][j] = ' '
+				ret[i + 1][j] = '.'
 
 for i in range (size):
 	for j in range (size):
