@@ -21,11 +21,11 @@ try:
         # checking invalid chars
         if (line.count('#') + line.count('.') + line.count(' ') != grid_size):
             raise Exception("Wrong character")
+        # Adding the line
+        lines.append(bytearray(line.encode('ascii')));
         # Checking the line count
         if (len(lines) > grid_size):
             raise Exception("Wrong count of lines")
-        # Adding the line
-        lines.append(bytearray(line.encode('ascii')));
         # next line
         line = sys.stdin.readline()
     
