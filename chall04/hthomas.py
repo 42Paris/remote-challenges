@@ -5,14 +5,14 @@ import string
 def swap(x,y):
     x, y = y, x
 
-def get_input():
+def get_inputs():
 	n = input()
 	lines = []
 	for _ in range(n):
 		lines.append(list(raw_input()))
 	return n, lines
 
-def check_arguents(n, lines):
+def check_inputs(n, lines):
 	for line in lines:
 		if not len(line) == n:
 			print ("All lines must be N-characters long")
@@ -20,8 +20,8 @@ def check_arguents(n, lines):
 	return 1
 
 if __name__ == "__main__":
-	n, lines = get_input()
-	if not check_arguents(n, lines):
+	n, lines = get_inputs()
+	if not check_inputs(n, lines):
 		exit(-1)
 	for _ in range(n):
 		for nbline in range(n - 1):
