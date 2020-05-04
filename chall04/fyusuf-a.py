@@ -31,9 +31,9 @@ def loop(tab, dim):
     updated = 0
     for i in range(dim):
         for j in range(dim):
-            if tab[dim - i - 1][j] == ' ' and 0 <= dim - i - 2 and tab[dim - i - 2][j] == '.':
-                tab[dim - i - 1][j] = '.'
-                tab[dim - i - 2][j] = ' '
+            if tab[i][j] == '.' and i + 1 < dim and tab[i + 1][j] == ' ':
+                tab[i][j] = ' '
+                tab[i + 1][j] = '.'
                 updated = 1
     if updated == 0:
         print_tab(tab, dim)
