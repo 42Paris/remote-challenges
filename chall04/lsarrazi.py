@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+# Python 2.7.16
+
 from sys import stdin
 
 N = int(stdin.readline())
@@ -31,4 +33,4 @@ for i in range(N - 1, -1, -1):
 				k += 1
 
 for i in range(0, N):
-	print ''.join(lines[i])
+	print(''.join(lines[i]))
