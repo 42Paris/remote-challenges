@@ -18,6 +18,9 @@ def check_map(lines):
         size = int(lines[0])
         lines.pop(0)
 
+        if size <= 0:
+            raise Exception('wrong map size')
+
         if size != len(lines):
             raise Exception('wrong number of lines')
         for idx, line in enumerate(lines):
