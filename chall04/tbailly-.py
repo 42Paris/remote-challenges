@@ -3,11 +3,11 @@ import sys
 import re
 
 def get_file_content():
-    if len(sys.argv) != 2:
-        raise Exception('Usage: python3 tbailly-.py map')
+    # if len(sys.argv) != 2:
+    #     raise Exception('Usage: python3 tbailly-.py map')
 
     try:
-        f = open(sys.argv[1], "r")
+        f = open(0, "r")
     except (OSError, IOError):
         raise Exception('Map not found')
     content = f.read()
