@@ -24,13 +24,11 @@ for i in range(N - 1, -1, -1):
 	for j in range(0, N):
 		if lines[i][j] == '.':
 			k = i
-			while k < N - 1:
-				below = lines[k + 1]
-				tmp = below[j]
-				if tmp != ' ': break
-				below[j] = '.'
-				lines[k][j] = tmp
+			while k < N - 1 and lines[k + 1][j] == ' ':
 				k += 1
-
-for i in range(0, N):
-	print(''.join(lines[i]))
+			lines[i][j] = ' '
+			lines[k][j] = '.'
+			
+for line in lines:
+	print(''.join(line))
+	
