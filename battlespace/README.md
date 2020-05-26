@@ -170,3 +170,9 @@ Vous créerez dans le repo git un dossier dont le nom sera votre login. Vous y m
 Vos projets seront compilés et testés avec des grilles identiques pour éviter les injustices possibles. Le nombre de coups pour finir une grille sera votre score pour celle-ci. Si votre programme envoie un coup invalide, si la grille n'est pas résolue en 200 coups ou si votre programme timeout, la vm annoncera un score de 200. Les scores de toutes les grilles seront additionnés pour donner votre résultat final. Le participant ayant le score le plus bas sera désigné vainqueur.
 
 Bonne chance à tous !
+
+## VII - Récompenses
+
+ - Le premier à trouver la bonne solution gagnera `42000` points de coalition si il est dans le nouveau cursus et `1000` si il est dans l'ancien.
+ - Toute personne ayant proposé une solution valide dans le temps imparti gagnera `12600` ou `300` points selon son cursus.
+ - Tous autre participant qui a tenté de résoudre le défi et a proposé une solution gagnera `8400` points ou `200` points selon son cursus.
