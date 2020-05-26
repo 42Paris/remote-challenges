@@ -84,7 +84,6 @@ L'objectif de votre algorithme sera d'identifier au plus vite la flotte que vous
 	* gettimeofday
 	* srand (3)
 	* rand (3)
-*  Vous pouvez poser vos questions sur le slack dans le channel #battlespace.
 
 ## V - Sujet
 
