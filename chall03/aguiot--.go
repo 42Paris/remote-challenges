@@ -20,10 +20,10 @@ func main() {
 	var id, r, g, b int32
 	startTime := time.Now()
 
-	body := makeGetRequest("https://chall03.hive.fi/", startTime)
+	body := makeGetRequest("http://0.0.0.0:8080/", startTime)
 	fmt.Sscanf(body, "id=%d,r=%d,g=%d,b=%d", &id, &r, &g, &b)
 	resp := fmt.Sprintf("?id=%d&resp=%02x%02x%02x", id, r, g, b)
-	body = makeGetRequest("https://chall03.hive.fi/" + resp, startTime)
+	body = makeGetRequest("http://0.0.0.0:8080/" + resp, startTime)
 
 	fmt.Printf("%4dms - DONE\n", time.Since(startTime).Milliseconds())
 }

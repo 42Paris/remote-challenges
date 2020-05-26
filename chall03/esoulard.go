@@ -11,9 +11,9 @@ import (
 
 func main() {
 	var str1 string
-	str1 = "https://chall03.hive.fi/?id="
+	str1 = "http://0.0.0.0:8080/?id="
 
-	resp, err := http.Get("https://chall03.hive.fi/")
+	resp, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
  		fmt.Println(err)
  		os.Exit(1)

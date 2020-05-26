@@ -23,7 +23,7 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
-	url := "https://chall03.hive.fi/"
+	url := "http://0.0.0.0:8080/"
 
 	log.Print("GET " + url)
 	resp1, err := http.Get(url)

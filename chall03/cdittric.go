@@ -29,14 +29,14 @@ func getWithTimestamp(start time.Time, url string) (*http.Response, string) {
 
 func main() {
     start := time.Now()
-    _, body := getWithTimestamp(start, "https://chall03.hive.fi/")
+    _, body := getWithTimestamp(start, "http://0.0.0.0:8080/")
     values := regexp.MustCompile("[0-9]+").FindAllString(body, 4)
     id, _ := strconv.Atoi(values[0])
     r, _ := strconv.Atoi(values[1])
     g, _ := strconv.Atoi(values[2])
     b, _ := strconv.Atoi(values[3])
     getWithTimestamp(start, fmt.Sprintf(
-                "https://chall03.hive.fi/?id=%d&resp=%02.2x%02.2x%02.2x",
+                "http://0.0.0.0:8080/?id=%d&resp=%02.2x%02.2x%02.2x",
                 id, r, g, b))
     printWithTimestamp(start, "DONE")
 }

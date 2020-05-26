@@ -20,7 +20,7 @@ func sendRequest(req string) string {
 }
 
 func main() {
-	res, err := http.Get("https://chall03.hive.fi/")
+	res, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -38,7 +38,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	req := fmt.Sprintf("https://chall03.hive.fi/?id=%s&resp=%02x%02x%02x", id, r, g, b)
+	req := fmt.Sprintf("http://0.0.0.0:8080/?id=%s&resp=%02x%02x%02x", id, r, g, b)
 	bodyResponse := sendRequest(req)
 	fmt.Printf("answer = %s\n", bodyResponse)
 }

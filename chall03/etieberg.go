@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	resp, err := http.Get("https://chall03.hive.fi/")
+	resp, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
 		log.Fatal(err)
 		return
@@ -31,7 +31,7 @@ func main() {
 	g, _ := strconv.Atoi(submatchall[2][1])
 	b, _ := strconv.Atoi(submatchall[3][1])
 	hex := fmt.Sprintf("%02x%02x%02x", r, g, b)
-	url := fmt.Sprintf("https://chall03.hive.fi/?id=%s&resp=%s", submatchall[0][1], hex)
+	url := fmt.Sprintf("http://0.0.0.0:8080/?id=%s&resp=%s", submatchall[0][1], hex)
 	send, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)

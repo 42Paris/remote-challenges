@@ -9,7 +9,7 @@ import (
 )
 
 func getChallenge() string {
-	resp, err := http.Get("https://chall03.hive.fi/")
+	resp, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
 		fmt.Println("Error while requesting challenge")
 		return ""
@@ -39,7 +39,7 @@ func parseData(data string) []int {
 }
 
 func sendResult(id int, hexColor string) {
-	url := fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%s", id, hexColor)
+	url := fmt.Sprintf("http://0.0.0.0:8080/?id=%d&resp=%s", id, hexColor)
 	fmt.Println("sending request to: ", url)
 	resp, err := http.Get(url)
 	if err != nil {

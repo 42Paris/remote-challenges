@@ -12,7 +12,7 @@ import (
 
 func main() {
 	client := &http.Client{}           // Set a Client object
-	addr := "https://chall03.hive.fi/" // First addr
+	addr := "http://0.0.0.0:8080/" // First addr
 	start := time.Now()                // Get the start time to time everything
 
 	fmt.Println(time.Now().Sub(start), " - GET ", addr) // Print the request

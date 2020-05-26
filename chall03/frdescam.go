@@ -10,7 +10,7 @@ import(
 	"strconv"
 )
 
-const URL = "https://chall03.hive.fi/"
+const URL = "http://0.0.0.0:8080/"
 
 func parse_input(input []byte) map[string]int {
 	re := regexp.MustCompile(`([0-9]+)`)

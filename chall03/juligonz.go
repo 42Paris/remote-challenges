@@ -26,7 +26,7 @@ func Getparams(body string) string {
 }
 
 func main() {
-	url := "https://chall03.hive.fi/"
+	url := "http://0.0.0.0:8080/"
 
 	body := Getbody(url)
 	params := Getparams(body)
