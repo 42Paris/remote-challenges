@@ -1,5 +1,4 @@
-#! /usr/bin/python3
-
+#!/usr/bin/env python3
 def rotate_map(mymap, size):
 	out = []
 	counter = 0

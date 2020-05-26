@@ -1,5 +1,4 @@
-#! /usr/bin/python3
-# I used python v3.7.3
+#!/usr/bin/env python3
 
 def apply_gravity(matrix, width, x, y) :
     while y < width - 1 and matrix[y + 1][x] == ' ' :

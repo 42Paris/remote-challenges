@@ -1,4 +1,4 @@
-#Python 2.7.18rc1
+#!/usr/bin/env python3
 import sys
 import string
 

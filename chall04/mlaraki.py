@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 def error_handler(message):
     print(message)
     exit(1)
