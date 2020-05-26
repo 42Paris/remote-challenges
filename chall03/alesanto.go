@@ -13,7 +13,7 @@ import (
 func main() {
 	start := time.Now()
 
-	url := "https://chall03.hive.fi/"
+	url := "http://0.0.0.0:8080/"
 	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url)
 	resp, err:= http.Get(url)
 	if err != nil {

@@ -1,0 +1,23 @@
+gimme map size
+  .  
+. #  
+#    
+    .
+ . ..
+gimme map size
+  .       
+. #....   
+#. .......
+ .........
+##########
+          
+          
+          
+..........
+##########
+gimme map size
+   
+   
+.  
+gimme map size
+.

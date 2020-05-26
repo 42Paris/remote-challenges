@@ -57,7 +57,7 @@ func convertColor(color int64) (str string) {
 
 func main() {
   var id int64 = 0
-  getMsg := "https://chall03.hive.fi/"
+  getMsg := "http://0.0.0.0:8080/"
   var r int64 = 0
   var g int64 = 0
   var b int64 = 0

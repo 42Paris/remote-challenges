@@ -48,7 +48,7 @@ func GetInfoFromString(s string) (id, ret string) {
 
 func GetChall03(id, resp string, start time.Time) (string) {
 
-	req, _ := http.NewRequest("GET", "https://chall03.hive.fi/?", nil)
+	req, _ := http.NewRequest("GET", "http://0.0.0.0:8080/?", nil)
 
 	q := req.URL.Query()
 	if len(id) > 0 && len(resp) > 0 {

@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	res, err := http.Get( "https://chall03.hive.fi/")
+	res, err := http.Get( "http://0.0.0.0:8080/")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -40,11 +40,11 @@ func main() {
 	// fmt.Printf("%s \n", message)
 	rgb := rhex + ghex + bhex
 	// fmt.Println(R,G,B , rgb)
-	res2, err := http.Get( "https://chall03.hive.fi/?id=" +string(ID) + "&resp="+string(rgb))
+	res2, err := http.Get( "http://0.0.0.0:8080/?id=" +string(ID) + "&resp="+string(rgb))
 	if err != nil {
 		log.Fatal(err)
 	}
 	message2, err := ioutil.ReadAll(res2.Body)
 	fmt.Printf("%s\n", message2)
-	fmt.Println("https://chall03.hive.fi/?id=" +string(ID) + "&resp="+string(rgb))
+	fmt.Println("http://0.0.0.0:8080/?id=" +string(ID) + "&resp="+string(rgb))
 }

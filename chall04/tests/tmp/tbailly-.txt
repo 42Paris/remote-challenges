@@ -1,0 +1,4 @@
+Invalid map: wrong number of lines
+Invalid map: wrong number of lines
+Invalid map: wrong number of lines
+Invalid map: wrong number of lines

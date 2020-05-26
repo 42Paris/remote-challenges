@@ -11,17 +11,17 @@ import (
 
 func main() {
 	start := time.Now()
-	fmt.Print("0ms: GET https://chall03.hive.fi/\n")
-	res, err := http.Get("https://chall03.hive.fi/")
+	fmt.Print("0ms: GET http://0.0.0.0:8080/\n")
+	res, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
-		panic("cannot make request to https://chall03.hive.fi/")
+		panic("cannot make request to http://0.0.0.0:8080/")
 	}
 	raw, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		panic("unable to read body")
 	}
 	defer res.Body.Close()
-	fmt.Printf("%s: GET https://chall03.hive.fi/\n\t - answer: %s\n", time.Since(start), string(raw))
+	fmt.Printf("%s: GET http://0.0.0.0:8080/\n\t - answer: %s\n", time.Since(start), string(raw))
 
 	parts := strings.Split(string(raw), "-")
 	if len(parts) != 2 {
@@ -49,7 +49,7 @@ func main() {
 	}
 	hexa := fmt.Sprintf("%02x%02x%02x", uint16(r), uint16(g), uint16(b))
 
-	endpoint := fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%s", id, hexa)
+	endpoint := fmt.Sprintf("http://0.0.0.0:8080/?id=%d&resp=%s", id, hexa)
 	fmt.Printf("%s: GET %s\n", time.Since(start), endpoint)
 	res, err = http.Get(endpoint)
 	if err != nil {

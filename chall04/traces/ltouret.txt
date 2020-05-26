@@ -1,0 +1,9 @@
+0a1
+> gimme map size
+5a7
+> gimme map size
+15a18
+> gimme map size
+18a22
+> gimme map size
+Diff: KO

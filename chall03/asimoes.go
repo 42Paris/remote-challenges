@@ -12,8 +12,8 @@ import (
 
 func main() {
 	start := time.Now()
-	fmt.Printf("%dms - GET https://chall03.hive.fi/\n", time.Since(start).Milliseconds())
-	resp, err := http.Get("https://chall03.hive.fi/")
+	fmt.Printf("%dms - GET http://0.0.0.0:8080/\n", time.Since(start).Milliseconds())
+	resp, err := http.Get("http://0.0.0.0:8080/")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -22,7 +22,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%dms - GET https://chall03.hive.fi/\n\tanswer:%s\n", time.Since(start).Milliseconds(), content)
+	fmt.Printf("%dms - GET http://0.0.0.0:8080/\n\tanswer:%s\n", time.Since(start).Milliseconds(), content)
 	re := regexp.MustCompile(`id=([0-9]+),r=([0-9]+),g=([0-9]+),b=([0-9]+)`)
 	data := re.FindSubmatch(content)
 	if len(data) != 5 {
@@ -40,7 +40,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Couldnt atoi blue value")
 	}
-	url := fmt.Sprintf("https://chall03.hive.fi/?id=%s&resp=%02x%02x%02x", data[1], r, g, b)
+	url := fmt.Sprintf("http://0.0.0.0:8080/?id=%s&resp=%02x%02x%02x", data[1], r, g, b)
 	fmt.Printf("%dms - GET %s\n", time.Since(start).Milliseconds(), url)
 	resp, err = http.Get(url)
 	if err != nil {

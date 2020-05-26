@@ -8,7 +8,7 @@ import "strconv"
 import "fmt"
 import "time"
 
-const host = "https://chall03.hive.fi"
+const host = "http://0.0.0.0:8080/"
 
 func getValue(str string) int {
 	val, err := strconv.Atoi(strings.Split(str, "=")[1])

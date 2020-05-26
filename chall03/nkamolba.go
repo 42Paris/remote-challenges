@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	url1 := "https://chall03.hive.fi/"
+	url1 := "http://0.0.0.0:8080/"
 
 	// start
 	start := time.Now()
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	// generate new url
-	url2 := fmt.Sprintf("https://chall03.hive.fi/?id=%d&resp=%02x%02x%02x", value_map["id"], value_map["r"], value_map["g"], value_map["b"])
+	url2 := fmt.Sprintf("http://0.0.0.0:8080/?id=%d&resp=%02x%02x%02x", value_map["id"], value_map["r"], value_map["g"], value_map["b"])
 	fmt.Printf("%dms - GET %s\n", time.Now().Sub(start).Milliseconds(), url2)
 
 	// request new response 2
