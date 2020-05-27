@@ -54,17 +54,17 @@ SRC_DIR = $(shell find ./srcs -type d)
 INC_DIR = includes
 OBJ_DIR = obj
 
-LIB_DIR = $(shell find ./lib -type d -maxdepth 1)
+LIB_DIR = $(shell find ./lib  -maxdepth 1 -type d)
 
 SRC = main.c
 #SRC+=
 
-OBJ     = $(addprefix  $(OBJ_DIR)/,$(SRC:%.s=%.o))
+OBJ     = $(addprefix  $(OBJ_DIR)/,$(SRC:%.c=%.o))
 vpath %.c $(SRC_DIR)
 
 CC      = clang
 CFLAGS  = -Wall -Wextra -Werror -g # -fsanitize=address  -fsanitize=undefined -fstack-protector  
-IFLAGS  = -I./includes
+IFLAGS  = -I./includes -I./lib/libft
 LFLAGS  = $(foreach lib, $(LIB_DIR),-L$(lib))  $(foreach lib, $(LIB),-l$(lib))
 
 all: $(NAME)
@@ -81,6 +81,10 @@ $(NAME): $(OBJ)
 debug: $(NAME)
 	@echo "$(_BOLD)$(_GREEN)######## $(_RED)NOT IMPLEMENTED !$(_GREEN) ######$(_R)"
 		
+test: $(NAME)
+	@echo "$(_BOLD)$(_GREEN)######## $(_RED)Testing !$(_GREEN) ######$(_R)"
+	../battlespace $(MAP) btsp
+
 clean:
 	@rm -rf $(OBJ_DIR)
 	@echo "$(_RED)Removed :$(_MAGENTA) $(OBJ_DIR)/$(_R)"
@@ -96,7 +100,9 @@ re: re_echo fclean all
 
 show:
 	@echo "$(_CYAN)CC     :$(_RED)  $(CC)$(_END)"
-	@echo "$(_CYAN)CFLAGS :$(_RED)  $(CFLAGS)$(_END)\n"
+	@echo "$(_CYAN)CFLAGS :$(_RED)  $(CFLAGS)$(_END)"
+	@echo "$(_CYAN)IFLAGS :$(_RED)  $(IFLAGS)$(_END)"
+	@echo "$(_CYAN)LFLAGS :$(_RED)  $(LFLAGS)$(_END)\n"
 	@echo "$(_CYAN)SRC    :$(_RED)  $(SRC)$(_END)"
 	@echo "$(_CYAN)OBJ    :$(_RED)  $(OBJ)$(_END)"
 
