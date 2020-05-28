@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 12:59:26 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/28 18:50:46 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/28 20:48:28 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_box	*create_carrier()
 {
 	t_box *carrier;
 
-	carrier = create_destroyer();
+	carrier = create_cruiser();
 	carrier = carrier->near[DOWN];
 	add_box(carrier, DOWN);
 	return (carrier);

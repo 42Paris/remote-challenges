@@ -1,4 +1,4 @@
-SRCS		= $(addprefix srcs/, players.c box.c)
+SRCS		= $(addprefix srcs/, players.c box.c ft_army.c ft_nation.c)
 
 OBJS		= ${SRCS:.c=.o}
 
