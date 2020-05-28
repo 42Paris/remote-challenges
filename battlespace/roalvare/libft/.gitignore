@@ -1,0 +1,8 @@
+/test/*
+*.out
+test.c
+.vscode/
+test_*.c
+*.o
+libft.a
+main.c
