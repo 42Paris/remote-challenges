@@ -52,6 +52,7 @@ typedef struct	s_army
 
 t_box	*create_box();
 void	add_box(t_box *parent, t_way dir);
+void	add_link(t_box *parent, t_box *child, t_way dir);
 void	print_box(t_box *node);
 void	box_suffixe(t_box *root, t_list **lst);
 
@@ -59,5 +60,8 @@ t_box	*create_fregate();
 t_box	*create_destroyer();
 t_box	*create_cruiser();
 t_box	*create_carrier();
+
+t_box	*create_station();
+t_box	*create_square();
 
 #endif
