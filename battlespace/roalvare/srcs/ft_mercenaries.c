@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 20:52:42 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/28 21:58:49 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/29 01:42:31 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ t_box	*create_station()
 t_box	*create_square()
 {
 	t_box	*square;
-	t_box	*tmp;
+	// t_box	*tmp;
 
 	square = create_fregate();
-	tmp = square->near[UP];
+	// tmp = square->near[UP];
 	add_box(square, RIGHT);
 	square = square->near[RIGHT];
 	add_box(square, UP);
-	square = square->near[UP];
-	add_link(square, tmp, LEFT);
+	// square = square->near[UP];
+	// add_link(square, tmp, LEFT);
 	return (square);
 }

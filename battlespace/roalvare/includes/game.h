@@ -64,4 +64,8 @@ t_box	*create_carrier();
 t_box	*create_station();
 t_box	*create_square();
 
+t_box	*create_mother_ship();
+t_box	*create_hole();
+t_box	*create_blocker();
+
 #endif

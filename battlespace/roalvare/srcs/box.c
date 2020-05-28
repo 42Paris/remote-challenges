@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 14:57:07 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/28 11:18:52 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/29 01:49:11 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,18 @@ void	add_box(t_box *parent, t_way dir)
 
 	new = create_box();
 	add_link(parent, new, dir);
-	if(parent->near[(dir + 2) % 8])
+	if (!(dir % 2) && parent->near[(dir + 2) % 8])
 		add_link(new, parent->near[(dir + 2) % 8], (dir + 3) % 8);
-	if(parent->near[(dir - 2) % 8])
+	if (!(dir % 2) && parent->near[(dir - 2) % 8])
 		add_link(new, parent->near[(dir - 2) % 8], (dir - 3) % 8);
+	if (dir % 2 && parent->near[(dir - 1) % 8])
+		add_link(new, parent->near[(dir - 1) % 8], (dir - 3) % 8);
+	if (dir % 2 && parent->near[(dir + 1) % 8])
+		add_link(new, parent->near[(dir + 1) % 8], (dir + 3) % 8);
+	if (!(dir % 2) && parent->near[(dir + 1) % 8])
+		add_link(new, parent->near[(dir + 1) % 8], (dir + 2) % 8);
+	if (!(dir % 2) && parent->near[(dir - 1) % 8])
+		add_link(new, parent->near[(dir - 1) % 8], (dir - 2) % 8);
 }
 
 int		is_null(void *pointeur)

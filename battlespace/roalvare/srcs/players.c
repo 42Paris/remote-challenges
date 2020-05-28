@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 23:56:46 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/28 22:00:18 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/29 01:49:42 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ void	fill_ship(t_box *ships[9])
 	ships[CARRIER] = create_carrier();
 	ships[STATION] = create_station();
 	ships[SQUARE] = create_square();
+	ships[MOTHER_SHIP] = create_mother_ship();
+	ships[HOLE] = create_hole();
+	ships[BLOCKER] = create_blocker();
 }
 
 void	fill_armies(t_army *armies)
@@ -49,6 +52,11 @@ void	fill_armies(t_army *armies)
 	armies->mercenaries[0] = DESTROYER;
 	armies->mercenaries[0] = SQUARE;
 	armies->mercenaries[0] = STATION;
+	armies->aliens[0] = FREGATE;
+	armies->aliens[1] = BLOCKER;
+	armies->aliens[2] = BLOCKER;
+	armies->aliens[3] = HOLE;
+	armies->aliens[4] = MOTHER_SHIP;
 }
 
 int		main()

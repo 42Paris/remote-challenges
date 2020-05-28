@@ -1,4 +1,9 @@
-SRCS		= $(addprefix srcs/, players.c box.c ft_army.c ft_nation.c ft_mercenaries.c)
+SRCS		= $(addprefix srcs/,	players.c \
+									box.c \
+									ft_army.c \
+									ft_nation.c \
+									ft_mercenaries.c \
+									ft_aliens.c)
 
 OBJS		= ${SRCS:.c=.o}
 
