@@ -12,7 +12,8 @@ typedef enum	e_state
 				MISS,
 				HIT,
 				BLOCKED,
-				SUNK
+				SUNK,
+				SHIELD
 }				t_state;
 
 typedef enum	e_way

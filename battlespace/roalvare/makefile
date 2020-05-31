@@ -39,4 +39,7 @@ fclean:
 
 re:	fclean all
 
+test: all
+	../a.out ../exemple.txt btsp
+
 .PHONY: 	all re makelib clean fclean
