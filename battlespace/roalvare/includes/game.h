@@ -2,14 +2,17 @@
 # define GAME_H
 
 # include "libft.h"
+# include <sys/time.h>
+# include <time.h>
+#include <stdio.h>
 
 typedef enum	e_state
 {
 				NONE,
 				MISS,
 				HIT,
-				SUNK,
-				BLOCKED
+				BLOCKED,
+				SUNK
 }				t_state;
 
 typedef enum	e_way
