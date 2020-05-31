@@ -76,6 +76,9 @@ SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
 									ft_btree_rotation.c \
 									ft_btree_avl.c)
 
+SRCS_READ	= $(addprefix read/,	get_next_line_bonus.c \
+									get_next_line_utils_bonus.c)
+
 
 SRCS		=	${SRCS_LIST} \
 				${SRCS_IS} \
@@ -85,11 +88,13 @@ SRCS		=	${SRCS_LIST} \
 				${SRCS_MATH} \
 				${SRCS_CONV} \
 				${SRCS_PRINT} \
-				${SRCS_BTREE}
+				${SRCS_BTREE} \
+				${SRCS_READ}
 
 HEADER		= $(addprefix ${INCLUDES}/,	libft.h \
 										ft_printf.h \
-										btree.h)
+										btree.h \
+										get_next_line_bonus.h)
 
 INCLUDES 	= includes
 

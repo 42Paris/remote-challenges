@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:52:53 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/03 01:29:38 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/31 13:09:57 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int				ft_min(int v1, int v2);
 
 # include "ft_printf.h"
 # include "btree.h"
+# include "get_next_line_bonus.h"
 
 #endif
