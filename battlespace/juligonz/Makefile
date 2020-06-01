@@ -57,7 +57,7 @@ OBJ_DIR = obj
 LIB_DIR = $(shell find ./lib  -maxdepth 1 -type d)
 
 SRC = main.c
-#SRC+=
+SRC+= map.c
 
 OBJ     = $(addprefix  $(OBJ_DIR)/,$(SRC:%.c=%.o))
 vpath %.c $(SRC_DIR)
@@ -74,9 +74,10 @@ $(OBJ_DIR)/%.o: %.c
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@echo "$(_GREEN)Compiling ...$(_END)"
-	@$(CC) $(CFLAGS) $(IFLAGS) $(LFLAGS) -o $@ $^
-	@echo "$(_GREEN)Compiled !$(_END)"
+	@$(MAKE) --no-print-directory install
+	@echo "\n$(_GREEN)$(_BOLD)Compiling $(NAME)...$(_END)"
+	@$(CC) $(CFLAGS) $(IFLAGS) -o $@ $^ $(LFLAGS)
+	@echo "$(_BLUE)$(_BOLD)Done !$(_R)"
 
 debug: $(NAME)
 	@echo "$(_BOLD)$(_GREEN)######## $(_RED)NOT IMPLEMENTED !$(_GREEN) ######$(_R)"
@@ -94,7 +95,7 @@ fclean: clean
 	@echo "$(_RED)Removed : $(_MAGENTA)$(NAME), $(DEBUG_EXEC)$(_R)"
 
 re_echo:
-	@echo "$(_CYAN)Redoing $(_BOLD)ALLL $(_R)$(_CYAN)$(_DIM)the things $(_R)$(_BLINK)$(_BOLD)$(_YELLOW)...$(_R)\n"
+	@echo "\n$(_CYAN)Redoing $(_BOLD)ALLL $(_R)$(_CYAN)$(_DIM)the things $(_R)$(_BLINK)$(_BOLD)$(_YELLOW)...$(_R)\n"
 
 re: re_echo fclean all
 
@@ -106,5 +107,46 @@ show:
 	@echo "$(_CYAN)SRC    :$(_RED)  $(SRC)$(_END)"
 	@echo "$(_CYAN)OBJ    :$(_RED)  $(OBJ)$(_END)"
 
+install: 
+	@echo "\n$(_R)$(_GREEN)$(_BOLD)Install libft.a ...$(_R)$(_YELLOW)$(_DIM)"
+	@make --no-print-directory -C lib/libft/
+	@echo "$(_R)$(_BLUE)$(_BOLD)Done ...$(_R)"
 
-.PHONY: clean fclean re all bonus debug re_echo show
+fclean-install:
+	@echo "$(_GREEN)$(_BOLD)fclean-install libft.a ...$(_R)$(_RED)$(_DIM)"
+	@make fclean -s -C lib/libft/
+
+re-install: fclean-install install
+
+.PHONY: clean fclean re all bonus debug re_echo show install re-install fclean-install
+
+#******************************************************************************#
+#                                  REMINDER                                    #  
+#******************************************************************************# \
+                                                                                 \
+                                                                                 \
+Automatic variables :                                                            \
+                                                                                 \
+$@ : rule name  target.         			                                     \
+                                                                                 \
+$^ : The names of all the prerequisites, with spaces between them. For           \
+prerequisites which are archive members, only the named member is used.          \
+                                                                                 \
+$< : The name of the first prerequisite. If the target got its recipe from an    \
+implicit rule, this will be the first prerequisite added by the implicit rule.   \
+                                                                                 \
+$? : The names of all the prerequisites that are newer than the target, with     \
+spaces between them. For prerequisites which are archive members, only the       \
+named member is used.                                                            \
+                                                                                 \
+                                                                                 \
+source :                                                                         \
+https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html      \
+
+#******************************************************************************#
+#                                  RESSOURCES                                  #  
+#******************************************************************************# \
+resources :                                                                      \
+https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents       \
+http://web.mit.edu/gnu/doc/html/make_toc.html#SEC88                              \
+https://www3.nd.edu/~zxu2/acms60212-40212/Makefile.pdf                           \
