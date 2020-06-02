@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:25:04 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/28 21:08:18 by syndraum         ###   ########.fr       */
+/*   Updated: 2020/06/02 09:02:30 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		get_next_line(int fd, char **line)
 {
 	static t_file	*lst_file = NULL;
 	t_file			*file;
-	t_list			*lst;
+	t_listc			*lst;
 	int				brk;
 	int				count;
 
@@ -36,9 +36,9 @@ int		get_next_line(int fd, char **line)
 	return (1);
 }
 
-t_list	*line_to_list(t_file *file, int *brk, int *count)
+t_listc	*line_to_list(t_file *file, int *brk, int *count)
 {
-	t_list	*lst;
+	t_listc	*lst;
 
 	lst = NULL;
 	while (*(file->crs) != '\n' && *brk > 0)
@@ -63,7 +63,7 @@ t_list	*line_to_list(t_file *file, int *brk, int *count)
 	return (lst);
 }
 
-void	*list_to_str(t_list *list, char **line, int len)
+void	*list_to_str(t_listc *list, char **line, int len)
 {
 	int		i;
 
@@ -79,12 +79,12 @@ void	*list_to_str(t_list *list, char **line, int len)
 	return (*line);
 }
 
-int		ft_lstnew_back(t_list **lst, char c)
+int		ft_lstnew_back(t_listc **lst, char c)
 {
-	t_list	*cursor;
-	t_list	*elmt;
+	t_listc	*cursor;
+	t_listc	*elmt;
 
-	if (!(elmt = malloc(sizeof(t_list))))
+	if (!(elmt = malloc(sizeof(t_listc))))
 		return (0);
 	elmt->content = c;
 	elmt->next = NULL;

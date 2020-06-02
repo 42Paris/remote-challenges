@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 16:27:39 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/28 21:12:15 by syndraum         ###   ########.fr       */
+/*   Updated: 2020/06/02 09:02:28 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-void	*free_list(t_list *list)
+void	*free_list(t_listc *list)
 {
-	t_list *next;
+	t_listc *next;
 
 	while (list != NULL)
 	{
