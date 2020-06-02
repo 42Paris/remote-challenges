@@ -12,62 +12,43 @@
 
 #include "btsp_charoua.h"
 
-void	ft_write_soluce(char line, char column)
+int		ft_blocked(char ***blocked, int *i, char line, char column)
 {
-	write(1, &line, 1);
-	write(1, &column, 1);
-	write(1, "\n", 1);
-}
-
-void	ft_blocked(int i, char **blocked)
-{
-	while (blocked[i][0] != 'Z')
-	{
-		ft_putstr(blocked[i]);
-		i++;
-	}
-}
-
-void	ft_free(char **blocked)
-{
-	int i;
-
-	i = 0;
-	while (i < 26)
-	{
-		free(blocked[i]);
-		i++;
-	}
-	free(blocked);
+	(*blocked)[*i][0] = line;
+	(*blocked)[*i][1] = column;
+	(*blocked)[*i][2] = '\n';
+	(*blocked)[*i][3] = '\0';
+	(*blocked)[*i + 1][0] = 'Z';
+	(*i)++;
+	return (1);
 }
 
 void	ft_solve(char **blocked, char *result, char line, char column)
 {
 	int i;
+	int block;
+	int sunk;
 
 	i = 0;
-	while (line <= 'J')
+	sunk = 0;
+	block = 0;
+	while (line <= 'J' && sunk < 6)
 	{
 		column = '0';
-		while (column <= '9')
+		while (column <= '9' && sunk < 6)
 		{
-			ft_write_soluce(line, column);
-			read(0, result, 8);
+			result = ft_write_soluce(line, column, result);
 			if (result[0] == 'B')
-			{
-				blocked[i][0] = line;
-				blocked[i][1] = column;
-				blocked[i][2] = '\n';
-				blocked[i][3] = '\0';
-				blocked[i + 1][0] = 'Z';
-				i++;
-			}
+				block = ft_blocked(&blocked, &i, line, column);
+			if (result[0] == 'S')
+				sunk++;
+			if (sunk == 5 && block > 0)
+				sunk = 6;
 			column++;
 		}
 		line++;
 	}
-	ft_blocked(0, blocked);
-	ft_free(blocked);
+	ft_write_blocked(0, blocked);
 }
 
 int		main(void)

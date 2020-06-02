@@ -13,6 +13,7 @@
 NAME	=	btsp
 
 SRC	=	ft_putstr.c \
+		btsp_charoua2.c \
 		btsp_charoua.c
 
 OBJ =	$(SRC:.c=.o)

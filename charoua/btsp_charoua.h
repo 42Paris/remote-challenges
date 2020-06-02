@@ -17,5 +17,8 @@
 # include <unistd.h>
 
 void	ft_putstr(char *str);
+char	*ft_write_soluce(char line, char column, char *result);
+void	ft_free(char **blocked);
+void	ft_write_blocked(int i, char **blocked);
 
 #endif
