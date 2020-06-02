@@ -38,19 +38,19 @@ void	rotate_ship(t_ship *ship)
 int		is_sunken_element_shield_generator(t_btsp *btsp, int y, int x)
 {
 	if (y > 0 && x > 0 && btsp->map[y - 1][x - 1] == HIT)
-		return (0);		
+		return (0);
 	if (y > 0 && btsp->map[y - 1][x] == HIT)
-		return (0);		
+		return (0);
 	if (y > 0 && x < 12 && btsp->map[y - 1][x + 1] == HIT)
-		return (0);		
+		return (0);
 	if (x > 0 && btsp->map[y][x - 1] == HIT)
-		return (0);		
+		return (0);
 	if (x < 12 && btsp->map[y][x + 1] == HIT)
-		return (0);		
+		return (0);
 	if (y < 12 && x > 0 && btsp->map[y + 1][x - 1] == HIT)
-		return (0);		
+		return (0);
 	if (y < 12 && btsp->map[y + 1][x] == HIT)
-		return (0);		
+		return (0);
 	if (y < 12 && x < 12 && btsp->map[y + 1][x + 1] == HIT)
 		return (0);
 	return (1);

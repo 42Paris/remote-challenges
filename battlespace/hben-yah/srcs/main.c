@@ -51,7 +51,7 @@ int		main(void)
 	t_btsp			btsp;
 	struct timeval	tv;
 
-	gettimeofday(&tv,NULL);
+	gettimeofday(&tv, NULL);
 	srand(1000000 * tv.tv_sec + tv.tv_usec);
 	init_btsp(&btsp);
 	while (++btsp.turn)

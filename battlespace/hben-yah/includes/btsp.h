@@ -83,22 +83,28 @@ extern const t_ship		g_ships[];
 */
 
 void					analyse_sunken_ship(t_btsp *btsp);
-int						compare_sunken_ship_to_database(t_btsp *btsp, t_ship *ship);
-int						is_ship_concording(t_btsp *btsp, t_ship *ship, int y, int x);
+int						compare_sunken_ship_to_database(t_btsp *btsp,
+															t_ship *ship);
+int						is_ship_concording(t_btsp *btsp, t_ship *ship, int y,
+																		int x);
 void					rotate_ship(t_ship *ship);
-int						is_sunken_element_shield_generator(t_btsp *btsp, int y, int x);
+int						is_sunken_element_shield_generator(t_btsp *btsp, int y,
+																		int x);
 int						ft_getc(void);
 void					generate_shield_heat_map(t_btsp *btsp);
-void					fill_shield_heat_map(t_btsp *btsp, int val, int y, int x);
+void					fill_shield_heat_map(t_btsp *btsp, int val, int y,
+																		int x);
 void					generate_heat_map(t_btsp *btsp);
 void					init_btsp(t_btsp *btsp);
 void					init_map(t_btsp *btsp);
 int						main(void);
 void					generate_ship_heat_map(t_btsp *btsp);
 void					compute_ships_heat_map(t_btsp *btsp, t_ship *ship);
-int						is_ship_compatible(t_btsp *btsp, t_ship *ship, int y, int x);
+int						is_ship_compatible(t_btsp *btsp, t_ship *ship, int y,
+																		int x);
 int						is_hit_or_blocked(t_btsp *btsp, int y, int x);
-void					fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x);
+void					fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y,
+																		int x);
 void					assess_outcome(t_btsp *btsp);
 void					sunk_ship(t_btsp *btsp);
 void					clear_sunked_ship(t_btsp *btsp, int y, int x);

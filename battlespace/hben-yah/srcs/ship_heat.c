@@ -15,7 +15,7 @@
 void	generate_ship_heat_map(t_btsp *btsp)
 {
 	int		i;
-	t_ship cur;
+	t_ship	cur;
 
 	i = 0;
 	while (i < 15)
@@ -78,19 +78,19 @@ int		is_ship_compatible(t_btsp *btsp, t_ship *ship, int y, int x)
 			}
 			else if (ship->model[i][j] == 2
 				&& (attachment += is_hit_or_blocked(btsp, y + i, x + j)) > 1)
-					return (0);
+				return (0);
 		}
 	}
 	return (core + attachment);
 }
 
-int			is_hit_or_blocked(t_btsp *btsp, int y, int x)
+int		is_hit_or_blocked(t_btsp *btsp, int y, int x)
 {
 	return (btsp->map[y][x] == HIT
 				|| (btsp->map[y][x] == BLOCKED && btsp->shield == 0));
 }
 
-void		fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x)
+void	fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x)
 {
 	int		i;
 	int		j;
@@ -106,10 +106,12 @@ void		fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x)
 			{
 				if (ship->model[i][j] == 1)
 					btsp->heat[y + i][x + j] += btsp->last_compared_size
-						+ btsp->conc_army[ship->army] - btsp->conc_ship[ship->id];
+						+ btsp->conc_army[ship->army]
+						- btsp->conc_ship[ship->id];
 				else if (ship->model[i][j] == 2)
 					btsp->heat[y + i][x + j] += (btsp->last_compared_size
-						+ btsp->conc_army[ship->army]) * (1 - btsp->attachment);
+						+ btsp->conc_army[ship->army])
+						* (1 - btsp->attachment);
 			}
 			++j;
 		}

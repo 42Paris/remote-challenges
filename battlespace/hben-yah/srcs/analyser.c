@@ -17,7 +17,7 @@ void	analyse_sunken_ship(t_btsp *btsp)
 	int		i;
 	int		j;
 	int		k;
-	t_ship cur;
+	t_ship	cur;
 
 	i = 0;
 	while (i < 15)
