@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexa.c                                          :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 13:26:16 by roalvare          #+#    #+#             */
-/*   Updated: 2020/06/02 09:15:53 by roalvare         ###   ########.fr       */
+/*   Created: 2020/06/02 09:34:34 by roalvare          #+#    #+#             */
+/*   Updated: 2020/06/02 09:36:21 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-void	byte_to_hexa(char *dst, unsigned char byte)
+typedef struct	s_list
 {
-	static char *hexa_base = "0123456789abcdef";
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
-	dst[0] = hexa_base[byte >> 4];
-	dst[1] = hexa_base[byte % 16];
-}
+#endif

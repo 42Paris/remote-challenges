@@ -6,23 +6,21 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:52:53 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/31 13:09:57 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/06/02 09:35:26 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "struct.h"
 # include <string.h>
 # include <stdlib.h>
 # include <ctype.h>
 # include <unistd.h>
-
-typedef struct	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
+# include "ft_printf.h"
+# include "btree.h"
+# include "get_next_line_bonus.h"
 
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_bzero(void *s, size_t n);
@@ -73,9 +71,5 @@ void			print_string(void *str);
 int				ft_abs(int n);
 int				ft_max(int v1, int v2);
 int				ft_min(int v1, int v2);
-
-# include "ft_printf.h"
-# include "btree.h"
-# include "get_next_line_bonus.h"
 
 #endif
