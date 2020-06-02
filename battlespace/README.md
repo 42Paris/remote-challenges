@@ -84,7 +84,6 @@ L'objectif de votre algorithme sera d'identifier au plus vite la flotte que vous
 	* gettimeofday
 	* srand (3)
 	* rand (3)
-*  Vous pouvez poser vos questions sur le slack dans le channel #battlespace.
 
 ## V - Sujet
 
@@ -173,6 +172,6 @@ Bonne chance à tous !
 
 ## VII - Récompenses
 
- - Le premier à trouver la bonne solution gagnera `42000` points de coalition si il est dans le nouveau cursus et `1000` si il est dans l'ancien.
+ - Le participant ayant le score le plus bas gagnera `42000` points de coalition si il est dans le nouveau cursus et `1000` si il est dans l'ancien.
  - Toute personne ayant proposé une solution valide dans le temps imparti gagnera `12600` ou `300` points selon son cursus.
  - Tous autre participant qui a tenté de résoudre le défi et a proposé une solution gagnera `8400` points ou `200` points selon son cursus.
