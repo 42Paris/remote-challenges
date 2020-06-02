@@ -6,7 +6,7 @@
 /*   By: hben-yah <hben-yah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 08:09:19 by hben-yah          #+#    #+#             */
-/*   Updated: 2020/06/02 18:49:46 by hben-yah         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:09:28 by hben-yah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,10 @@
 # include "libft.h"
 
 /*
-** Defines
-*/
-
-# define BTSP_NAME				"Batteplace"
-
-# define BTSP_OPTIONS			"h"
-# define BTSP_OP_H				1
-
-/*
 ** Structures
 */
 
-enum e_state
+enum					e_state
 {
 	UNKNOW,
 	MISS,
@@ -38,14 +29,14 @@ enum e_state
 	BLOCKED
 };
 
-enum e_army
+enum					e_army
 {
 	NATION,
 	MERCENARIES,
 	ALIENS
 };
 
-enum e_strategy
+enum					e_strategy
 {
 	RANDOM_ATTACK,
 	SHIP_ATTACK,
@@ -85,36 +76,36 @@ typedef struct			s_btsp
 	int				conc_ship[15];
 }						t_btsp;
 
-extern const t_ship g_ships[];
+extern const t_ship		g_ships[];
 
 /*
 ** Prototypes
 */
 
-void			analyse_sunken_ship(t_btsp *btsp);
-int				compare_sunken_ship_to_database(t_btsp *btsp, t_ship *ship);
-int				is_ship_concording(t_btsp *btsp, t_ship *ship, int y, int x);
-void			rotate_ship(t_ship *ship);
-int				is_sunken_element_shield_generator(t_btsp *btsp, int y, int x);
-int				ft_getc(void);
-void			generate_shield_heat_map(t_btsp *btsp);
-void			fill_shield_heat_map(t_btsp *btsp, int val, int y, int x);
-void			generate_heat_map(t_btsp *btsp);
-void			init_btsp(t_btsp *btsp);
-void			init_map(t_btsp *btsp);
-int				main(void);
-void			generate_ship_heat_map(t_btsp *btsp);
-void			compute_ships_heat_map(t_btsp *btsp, t_ship *ship);
-int				is_ship_compatible(t_btsp *btsp, t_ship *ship, int y, int x);
-int				is_hit_or_blocked(t_btsp *btsp, int y, int x);
-void			fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x);
-void			assess_outcome(t_btsp *btsp);
-void			sunk_ship(t_btsp *btsp);
-void			clear_sunked_ship(t_btsp *btsp, int y, int x);
-void			launch_attack(t_btsp *btsp);
-void			select_target_coord(t_btsp *btsp);
-int				look_for_blocked_coordinates(t_btsp *btsp);
-void			select_best_coordinates(t_btsp *btsp);
-void			select_random_coordinates(t_btsp *btsp);
+void					analyse_sunken_ship(t_btsp *btsp);
+int						compare_sunken_ship_to_database(t_btsp *btsp, t_ship *ship);
+int						is_ship_concording(t_btsp *btsp, t_ship *ship, int y, int x);
+void					rotate_ship(t_ship *ship);
+int						is_sunken_element_shield_generator(t_btsp *btsp, int y, int x);
+int						ft_getc(void);
+void					generate_shield_heat_map(t_btsp *btsp);
+void					fill_shield_heat_map(t_btsp *btsp, int val, int y, int x);
+void					generate_heat_map(t_btsp *btsp);
+void					init_btsp(t_btsp *btsp);
+void					init_map(t_btsp *btsp);
+int						main(void);
+void					generate_ship_heat_map(t_btsp *btsp);
+void					compute_ships_heat_map(t_btsp *btsp, t_ship *ship);
+int						is_ship_compatible(t_btsp *btsp, t_ship *ship, int y, int x);
+int						is_hit_or_blocked(t_btsp *btsp, int y, int x);
+void					fill_ship_heat_map(t_btsp *btsp, t_ship *ship, int y, int x);
+void					assess_outcome(t_btsp *btsp);
+void					sunk_ship(t_btsp *btsp);
+void					clear_sunked_ship(t_btsp *btsp, int y, int x);
+void					launch_attack(t_btsp *btsp);
+void					select_target_coord(t_btsp *btsp);
+int						look_for_blocked_coordinates(t_btsp *btsp);
+void					select_best_coordinates(t_btsp *btsp);
+void					select_random_coordinates(t_btsp *btsp);
 
 #endif
