@@ -6,7 +6,7 @@
 #    By: hben-yah <hben-yah@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/02 18:49:22 by hben-yah          #+#    #+#              #
-#    Updated: 2020/06/02 18:50:10 by hben-yah         ###   ########.fr        #
+#    Updated: 2020/06/02 18:58:46 by hben-yah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ FILES_C			=   \
 					target_selector.c
 FILES_O			=	$(FILES_C:.c=.o)
 FILES_H			=	\
-					prototypes.h \
 					btsp.h
 SRCS_D			=	./srcs/
 OBJS_D			=   ./objs/
