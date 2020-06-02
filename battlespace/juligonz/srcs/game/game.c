@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 14:51:32 by juligonz          #+#    #+#             */
-/*   Updated: 2020/06/02 15:49:28 by juligonz         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:02:40 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	game_loop(void)
 	while (++row < g_map.nb_cells)
 		if (g_map.grid[row] == 'B')
 		{
-			print_position(row % g_map.size, row / g_map.size);
-			print_map();
 			play(row % g_map.size, row / g_map.size);
 			sync_game(row % g_map.size, row / g_map.size);
 		}
