@@ -57,13 +57,14 @@ OBJ_DIR = obj
 LIB_DIR = $(shell find ./lib  -maxdepth 1 -type d)
 
 SRC = main.c
-SRC+= map.c
+SRC+= map.c map_util.c
+SRC+= game.c
 
 OBJ     = $(addprefix  $(OBJ_DIR)/,$(SRC:%.c=%.o))
 vpath %.c $(SRC_DIR)
 
 CC      = clang
-CFLAGS  = -Wall -Wextra -Werror -g # -fsanitize=address  -fsanitize=undefined -fstack-protector  
+CFLAGS  = -Wall -Wextra -Werror -g -fsanitize=address  -fsanitize=undefined -fstack-protector  
 IFLAGS  = -I./includes -I./lib/libft
 LFLAGS  = $(foreach lib, $(LIB_DIR),-L$(lib))  $(foreach lib, $(LIB),-l$(lib))
 
@@ -84,7 +85,8 @@ debug: $(NAME)
 		
 test: $(NAME)
 	@echo "$(_BOLD)$(_GREEN)######## $(_RED)Testing !$(_GREEN) ######$(_R)"
-	../battlespace $(MAP) btsp
+	@echo "$(_YELLOW)../battlespace $(MAP) btsp$(_R)";
+	@../battlespace $(MAP) btsp
 
 clean:
 	@rm -rf $(OBJ_DIR)
