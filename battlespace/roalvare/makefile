@@ -10,7 +10,7 @@ DIR_LIBFT	= libft
 
 NAME 		= btsp
 
-CC			= clang
+CC			= clang-9
 
 CFLAGS		= -g -Werror -Wextra -Wall -I ${INCLUDES_L} -I ${INCLUDES}
 

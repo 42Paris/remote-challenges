@@ -1,6 +1,6 @@
 NAME = btsp
 
-CC = clang
+CC = clang-9
 
 CFLAGS = -Wall -Wextra -Werror
 

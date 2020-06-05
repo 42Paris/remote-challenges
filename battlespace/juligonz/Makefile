@@ -63,7 +63,7 @@ SRC+= game.c
 OBJ     = $(addprefix  $(OBJ_DIR)/,$(SRC:%.c=%.o))
 vpath %.c $(SRC_DIR)
 
-CC      = clang
+CC      = clang-9
 CFLAGS  = -Wall -Wextra -Werror -g -fsanitize=address  -fsanitize=undefined -fstack-protector  
 IFLAGS  = -I./includes -I./lib/libft
 LFLAGS  = $(foreach lib, $(LIB_DIR),-L$(lib))  $(foreach lib, $(LIB),-l$(lib))

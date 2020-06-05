@@ -100,7 +100,7 @@ INCLUDES 	= includes
 
 NAME		= libft.a
 
-CC			= clang
+CC			= clang-9
 
 CFLAG		= -Wall -Wextra -Werror -g
 

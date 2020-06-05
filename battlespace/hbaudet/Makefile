@@ -22,7 +22,7 @@ LIBFT			=	libft.a
 
 NAME			=	btsp
 
-CC				=	clang
+CC				=	clang-9
 
 RM				=	rm -f
 

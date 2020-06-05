@@ -12,7 +12,7 @@
 
 NAME			=	libft.a
 
-COMP			=	clang
+COMP			=	clang-9
 FLAG			=	-Wall -Wextra -Werror
 FLAGDEV         =   -g3
 
