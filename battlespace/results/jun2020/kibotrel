@@ -1,0 +1,17 @@
+Norm test:
+OK
+Makefile test:
+OK
+grids/jun2020/grid_an
+80
+grids/jun2020/grid_ax
+111
+grids/jun2020/grid_mn
+73
+grids/jun2020/grid_mx
+102
+grids/jun2020/grid_nn
+85
+grids/jun2020/grid_nx
+73
+total: 524
