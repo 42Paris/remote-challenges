@@ -97,15 +97,48 @@ void				ft_exec_child(char *resolver, int pipefdin[2],
 	exit(EXIT_FAILURE);
 }
 
-int					ft_get_move(int fd)
+void				ft_exit_parent(pid_t pid)
+{
+	kill(pid, SIGTERM);
+	exit(EXIT_FAILURE);
+}
+
+void				ft_child_exited(int status)
+{
+	if (WIFEXITED(status))
+		printf("btsp exited unexpectedly with status %d\n",
+			WEXITSTATUS(status));
+	else if (WIFSIGNALED(status))
+		printf("btsp exited unexpectedly because of signal %d\n",
+			WTERMSIG(status));
+	exit(EXIT_SUCCESS);
+}
+
+int					ft_get_move(int fd, time_t tm, pid_t pid)
 {
 	char			buf[3];
 	int				i;
 	int				ret;
+	int				status;
 
 	i = 0;
-	while (i < 3 && (ret = read(fd, buf + i, 3 - i)) > 0)
-		i += ret;
+	while (i < 3 && ((ret = read(fd, buf + i, 3 - i)) > 0 || errno == EAGAIN))
+	{
+		if (time(NULL) > tm)
+		{
+			printf("TIMEOUT\n");
+			ft_exit_parent(pid);
+		}
+		if (ret > 0)
+			i += ret;
+		if ((ret = waitpid(pid, &status, WNOHANG)) < 0)
+		{
+			perror(NULL);
+			ft_exit_parent(pid);
+		}
+		if (ret > 0)
+			ft_child_exited(status);
+	}
 	if (ret < 0)
 		perror(NULL);
 	if (i < 3 || buf[0] < 'A' || buf[0] > 'J' || buf[1] < '0' ||
@@ -181,14 +214,23 @@ int					ft_exec_parent(pid_t pid, int pipefdin[2],
 {
 	int				ret;
 	int				count;
+	time_t			tm;
 
 	close(pipefdin[1]);
 	close(pipefdout[0]);
+	tm = 0;
+	if ((ret = fcntl(pipefdin[0], F_GETFL)) < 0 ||
+		fcntl(pipefdin[0], F_SETFL, ret | O_NONBLOCK) < 0 || time(&tm) < 0)
+	{
+		perror(NULL);
+		ft_exit_parent(pid);
+	}
+	tm += 10;
 	ret = 1;
 	count = 0;
 	while (ret > 0 && count < 200)
 	{
-		ret = ft_get_move(pipefdin[0]);
+		ret = ft_get_move(pipefdin[0], tm, pid);
 		if (ret >= 0)
 			ret = ft_play_move(ret, pipefdout[1], board);
 		count++;
